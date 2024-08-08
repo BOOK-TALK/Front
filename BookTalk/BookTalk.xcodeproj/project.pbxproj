@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		051155F12C64B08F00230CFE /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051155F02C64B08F00230CFE /* ReusableIdentifier.swift */; };
 		051155FB2C64BFDF00230CFE /* BaseHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051155FA2C64BFDF00230CFE /* BaseHeaderFooterView.swift */; };
+		051155FD2C64C02700230CFE /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051155FC2C64C02700230CFE /* BaseTableViewCell.swift */; };
 		054543352C5374D900E64948 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543342C5374D900E64948 /* SearchViewController.swift */; };
 		054543992C5749F300E64948 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543982C5749F300E64948 /* HomeViewModel.swift */; };
 		0545439B2C574B9000E64948 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545439A2C574B9000E64948 /* HomeSection.swift */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		051155F02C64B08F00230CFE /* ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifier.swift; sourceTree = "<group>"; };
 		051155FA2C64BFDF00230CFE /* BaseHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderFooterView.swift; sourceTree = "<group>"; };
+		051155FC2C64C02700230CFE /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		054543342C5374D900E64948 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		054543982C5749F300E64948 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0545439A2C574B9000E64948 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 			children = (
 				AB2E7BCD2C53ADF700CE43CB /* BaseViewController.swift */,
 				051155FA2C64BFDF00230CFE /* BaseHeaderFooterView.swift */,
+				051155FC2C64C02700230CFE /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				AB2E7C042C565B3A00CE43CB /* FirstCategoryViewController.swift in Sources */,
 				0545439B2C574B9000E64948 /* HomeSection.swift in Sources */,
 				AB2E7BDC2C53B64800CE43CB /* CategorySectionKind.swift in Sources */,
+				051155FD2C64C02700230CFE /* BaseTableViewCell.swift in Sources */,
 				ABD10DF82C52514F005F290E /* FirstCategoryCell.swift in Sources */,
 				054543F22C5A233600E64948 /* SearchMockData.swift in Sources */,
 				051155F12C64B08F00230CFE /* ReusableIdentifier.swift in Sources */,
