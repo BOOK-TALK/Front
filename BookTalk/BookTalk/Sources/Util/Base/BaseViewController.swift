@@ -20,7 +20,6 @@ class BaseViewController: UIViewController {
         setConstraints()
         setDelegate()
         registerCell()
-        setCollectionView()
         addTarget()
         bind()
     }
@@ -39,9 +38,6 @@ class BaseViewController: UIViewController {
     
     /// cell 등록
     func registerCell() { }
-    
-    /// collection view 설정
-    func setCollectionView() { }
     
     /// button target 추가
     func addTarget() { }
