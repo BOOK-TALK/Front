@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		051155F12C64B08F00230CFE /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051155F02C64B08F00230CFE /* ReusableIdentifier.swift */; };
+		051155FB2C64BFDF00230CFE /* BaseHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051155FA2C64BFDF00230CFE /* BaseHeaderFooterView.swift */; };
 		054543352C5374D900E64948 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543342C5374D900E64948 /* SearchViewController.swift */; };
 		054543992C5749F300E64948 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543982C5749F300E64948 /* HomeViewModel.swift */; };
 		0545439B2C574B9000E64948 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545439A2C574B9000E64948 /* HomeSection.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		051155F02C64B08F00230CFE /* ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifier.swift; sourceTree = "<group>"; };
+		051155FA2C64BFDF00230CFE /* BaseHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderFooterView.swift; sourceTree = "<group>"; };
 		054543342C5374D900E64948 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		054543982C5749F300E64948 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0545439A2C574B9000E64948 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				AB2E7BCD2C53ADF700CE43CB /* BaseViewController.swift */,
+				051155FA2C64BFDF00230CFE /* BaseHeaderFooterView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				AB2E7BE32C53C17100CE43CB /* CategoryTitleCell.swift in Sources */,
 				057925412C4FF4DC00834EC6 /* GoalViewController.swift in Sources */,
 				AB2E7BED2C53DB2200CE43CB /* CategoryBooks.swift in Sources */,
+				051155FB2C64BFDF00230CFE /* BaseHeaderFooterView.swift in Sources */,
 				AB2E7BFA2C54A53900CE43CB /* CategorySelectModaViewController.swift in Sources */,
 				AB0C0F6A2C5BFDBE007812C5 /* ChatModel.swift in Sources */,
 				AB22AD3C2C4E8D9D00C9A0F3 /* AppDelegate.swift in Sources */,
