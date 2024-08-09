@@ -50,7 +50,7 @@ final class FirstCategoryViewController: BaseViewController {
         }
     }
 
-    private func registerCell() {
+    override func registerCell() {
         firstCategoryCollectionView.register(
             FirstCategoryCell.self,
             forCellWithReuseIdentifier: FirstCategoryCell.identifier

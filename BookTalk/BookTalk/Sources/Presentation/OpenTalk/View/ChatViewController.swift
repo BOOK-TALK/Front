@@ -100,11 +100,11 @@ final class ChatViewController: BaseViewController {
         }
     }
 
-    private func setDelegate() {
+    override func setDelegate() {
         chatTableView.dataSource = self
     }
 
-    private func registerCell() {
+    override func registerCell() {
         chatTableView.register(OtherChatBubbleCell.self, forCellReuseIdentifier: OtherChatBubbleCell.identifier)
         chatTableView.register(MyChatBubbleCell.self, forCellReuseIdentifier: MyChatBubbleCell.identifier)
     }

@@ -93,7 +93,7 @@ final class BookDetailViewController: BaseViewController {
     
     // MARK: - Helpers
     
-    private func bind() {
+    override func bind() {
         viewModel.onFavoriteButtonTapped = { [weak self] in
             self?.updateFavoriteButtonState()
         }

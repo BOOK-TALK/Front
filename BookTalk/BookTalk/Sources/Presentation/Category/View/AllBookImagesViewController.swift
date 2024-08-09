@@ -84,7 +84,7 @@ final class AllBookImagesViewController: BaseViewController {
         }
     }
 
-    private func registerCell() {
+    override func registerCell() {
         booksCollectionView.register(BookImageCell.self, forCellWithReuseIdentifier: BookImageCell.identifier)
     }
 

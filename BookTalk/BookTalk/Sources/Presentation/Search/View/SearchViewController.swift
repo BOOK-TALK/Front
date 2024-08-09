@@ -67,7 +67,7 @@ final class SearchViewController: BaseViewController {
     
     // MARK: - Helpers
     
-    private func bind() {
+    override func bind() {
         viewModel.onBooksUpdated = { [weak self] in
             self?.tableView.reloadData()
         }

@@ -43,7 +43,7 @@ final class HomeViewController: BaseViewController {
     
     // MARK: - Bind
     
-    private func bind() {
+    override func bind() {
         viewModel.sectionsDidChange = { [weak self] sections in
             self?.tableView.reloadData()
         }

@@ -66,12 +66,12 @@ final class ChatMenuViewController: BaseViewController {
 
     // MARK: - Helpers
 
-    private func setDelegate() {
+    override func setDelegate() {
         chatMenuTableView.dataSource = self
         chatMenuTableView.delegate = self
     }
 
-    private func registerCell() {
+    override func registerCell() {
         chatMenuTableView.register(
             NowReadingCell.self,
             forCellReuseIdentifier: NowReadingCell.identifier

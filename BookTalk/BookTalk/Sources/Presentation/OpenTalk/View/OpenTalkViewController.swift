@@ -86,7 +86,7 @@ final class OpenTalkViewController: BaseViewController {
         }
     }
 
-    private func setDelegate() {
+    override func setDelegate() {
         pageCollectionView.dataSource = self
         pageCollectionView.delegate = self
 
@@ -94,7 +94,7 @@ final class OpenTalkViewController: BaseViewController {
         bookCollectionView.delegate = self
     }
 
-    private func registerCell() {
+    override func registerCell() {
         pageCollectionView.register(OpenTalkPageCell.self, forCellWithReuseIdentifier: OpenTalkPageCell.identifier)
         bookCollectionView.register(BookImageCell.self, forCellWithReuseIdentifier: BookImageCell.identifier)
     }

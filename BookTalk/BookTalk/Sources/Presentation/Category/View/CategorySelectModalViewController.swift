@@ -108,7 +108,7 @@ final class CategorySelectModalViewController: BaseViewController {
         pickerView.delegate = self
     }
 
-    private func addTarget() {
+    override func addTarget() {
         dismissButton.addTarget(
             self,
             action: #selector(dismissButtonDidTapped),
@@ -121,7 +121,7 @@ final class CategorySelectModalViewController: BaseViewController {
         )
     }
 
-    private func bind() {
+    override func bind() {
         viewModel.send(
             action: .subcategorySelected(subcategory: viewModel.selectedSubcategory ?? "전체")
         )

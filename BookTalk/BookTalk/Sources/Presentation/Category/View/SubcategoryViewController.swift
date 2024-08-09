@@ -73,14 +73,14 @@ final class SubcategoryViewController: BaseViewController {
         subcategoryTableView.delegate = self
     }
 
-    private func registerCell() {
+    override func registerCell() {
         subcategoryTableView.register(BannerCell.self, forCellReuseIdentifier: BannerCell.identifier)
         subcategoryTableView.register(CategoryTitleCell.self, forCellReuseIdentifier: CategoryTitleCell.identifier)
         subcategoryTableView.register(ShowAllBookCell.self, forCellReuseIdentifier: ShowAllBookCell.identifier)
         subcategoryTableView.register(CategoryBookCell.self, forCellReuseIdentifier: CategoryBookCell.identifier)
     }
 
-    private func bind() {
+    override func bind() {
         viewModel.subcategory.subscribe { [weak self] _ in
             self?.subcategoryTableView.reloadData()
         }
