@@ -10,9 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class NowReadingCell: UITableViewCell {
-
-    static let identifier = "NowReadingCell"
+final class NowReadingCell: BaseTableViewCell {
 
     // MARK: - Properties
 
@@ -36,7 +34,7 @@ final class NowReadingCell: UITableViewCell {
 
     // MARK: - UI Setup
 
-    private func setViews() {
+    override func setViews() {
         selectionStyle = .none
         
         contentView.backgroundColor = .white
@@ -54,7 +52,7 @@ final class NowReadingCell: UITableViewCell {
         }
     }
 
-    private func setConstraints() {
+    override func setConstraints() {
         [titleLabel, nowReadingPeopleTableView].forEach {
             contentView.addSubview($0)
         }
@@ -72,12 +70,12 @@ final class NowReadingCell: UITableViewCell {
         }
     }
 
-    private func setDelegate() {
+    override func setDelegate() {
         nowReadingPeopleTableView.dataSource = self
         nowReadingPeopleTableView.delegate = self
     }
 
-    private func registerCell() {
+    override func registerCell() {
         nowReadingPeopleTableView.register(
             ReadingPeopleCell.self,
             forCellReuseIdentifier: ReadingPeopleCell.identifier

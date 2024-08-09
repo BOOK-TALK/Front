@@ -7,9 +7,7 @@
 
 import UIKit
 
-final class CategoryBookCell: UITableViewCell {
-    
-    static let identifier = "CategoryBookCell"
+final class CategoryBookCell: BaseTableViewCell {
 
     private let headerLabel = UILabel()
     private let bookCollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
@@ -27,7 +25,7 @@ final class CategoryBookCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setViews() {
+    override func setViews() {
         selectionStyle = .none
         
         contentView.backgroundColor = .clear
@@ -47,7 +45,7 @@ final class CategoryBookCell: UITableViewCell {
         }
     }
 
-    private func setConstraints() {
+    override func setConstraints() {
 
         [headerLabel, bookCollectionView].forEach {
             contentView.addSubview($0)
@@ -66,7 +64,7 @@ final class CategoryBookCell: UITableViewCell {
         }
     }
 
-    private func registerCell() {
+    override func registerCell() {
         bookCollectionView.register(BookImageCell.self, forCellWithReuseIdentifier: BookImageCell.identifier)
     }
 

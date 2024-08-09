@@ -10,9 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class OpenTalkPageCell: UICollectionViewCell {
-
-    static let identifier = "OpenTalkPageCell"
+final class OpenTalkPageCell: BaseCollectionViewCell {
 
     private let pageTitleLabel = UILabel()
     private let lineView = UIView()
@@ -34,7 +32,7 @@ final class OpenTalkPageCell: UICollectionViewCell {
         }
     }
 
-    private func setViews() {
+    override func setViews() {
         contentView.backgroundColor = .white
 
         pageTitleLabel.do {
@@ -49,7 +47,7 @@ final class OpenTalkPageCell: UICollectionViewCell {
         }
     }
 
-    private func setConstraints() {
+    override func setConstraints() {
         [pageTitleLabel, lineView].forEach {
             contentView.addSubview($0)
         }

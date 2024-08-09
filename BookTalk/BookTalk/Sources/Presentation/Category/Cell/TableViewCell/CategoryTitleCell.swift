@@ -7,9 +7,7 @@
 
 import UIKit
 
-final class CategoryTitleCell: UITableViewCell {
-
-    static let identifier = "CategoryTitleCell"
+final class CategoryTitleCell: BaseTableViewCell {
 
     private let firstCategoryTitleLabel = UILabel()
     private let chevronImageView = UIImageView()
@@ -26,7 +24,7 @@ final class CategoryTitleCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setViews() {
+    override func setViews() {
         selectionStyle = .none
 
         contentView.backgroundColor = .clear
@@ -48,7 +46,7 @@ final class CategoryTitleCell: UITableViewCell {
         }
     }
 
-    private func setConstraints() {
+    override func setConstraints() {
         [firstCategoryTitleLabel, chevronImageView, subcategoryTitleLabel].forEach {
             contentView.addSubview($0)
         }

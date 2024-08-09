@@ -7,9 +7,7 @@
 
 import UIKit
 
-final class FirstCategoryCell: UICollectionViewCell {
-
-    static let identifier = "FirstCategoryCell"
+final class FirstCategoryCell: BaseCollectionViewCell {
 
     private let categoryNameLabel = UILabel()
 
@@ -24,7 +22,7 @@ final class FirstCategoryCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setViews() {
+    override func setViews() {
         contentView.backgroundColor = .white
 
         contentView.do {
@@ -39,7 +37,7 @@ final class FirstCategoryCell: UICollectionViewCell {
         }
     }
 
-    private func setConstraints() {
+    override func setConstraints() {
         [categoryNameLabel].forEach {
             contentView.addSubview($0)
         }

@@ -10,9 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class CompletedReadingCell: UITableViewCell {
-
-    static let identifier = "CompletedReadingCell"
+final class CompletedReadingCell: BaseTableViewCell {
 
     // MARK: - Properties
 
@@ -36,7 +34,7 @@ final class CompletedReadingCell: UITableViewCell {
 
     // MARK: - UI Setup
 
-    private func setViews() {
+    override func setViews() {
         contentView.backgroundColor = .clear
 
         titleLabel.do {
@@ -52,7 +50,7 @@ final class CompletedReadingCell: UITableViewCell {
         }
     }
 
-    private func setConstraints() {
+    override func setConstraints() {
         [titleLabel, completedReadingPeopleTableView].forEach {
             contentView.addSubview($0)
         }
@@ -72,12 +70,12 @@ final class CompletedReadingCell: UITableViewCell {
 
     // MARK: - Helpers
 
-    private func setDelegate() {
+    override func setDelegate() {
         completedReadingPeopleTableView.dataSource = self
         completedReadingPeopleTableView.delegate = self
     }
 
-    private func registerCell() {
+    override func registerCell() {
         completedReadingPeopleTableView.register(
             ReadingPeopleCell.self,
             forCellReuseIdentifier: ReadingPeopleCell.identifier

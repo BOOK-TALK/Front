@@ -10,9 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class MyReadingProgressCell: UITableViewCell {
-
-    static let identifier = "MyReadingProgressCell"
+final class MyReadingProgressCell: BaseTableViewCell {
 
     // MARK: - Properties
 
@@ -37,7 +35,7 @@ final class MyReadingProgressCell: UITableViewCell {
 
     // MARK: - UI Setup
 
-    private func setViews() {
+    override func setViews() {
         selectionStyle = .none
 
         contentView.backgroundColor = .clear
@@ -69,7 +67,7 @@ final class MyReadingProgressCell: UITableViewCell {
         }
     }
 
-    private func setConstraints() {
+    override func setConstraints() {
         [titleLabel, percentLabel, myProfileImage, progressView, updateButton].forEach {
             contentView.addSubview($0)
         }

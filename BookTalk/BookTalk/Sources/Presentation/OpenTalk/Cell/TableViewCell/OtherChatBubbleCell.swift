@@ -10,9 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class OtherChatBubbleCell: UITableViewCell {
-
-    static let identifier = "ChatViewCell"
+final class OtherChatBubbleCell: BaseTableViewCell {
 
     private let profileImageView = UIImageView()
     private let nicknameLabel = UILabel()
@@ -34,7 +32,7 @@ final class OtherChatBubbleCell: UITableViewCell {
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
     }
 
-    private func setViews() {
+    override func setViews() {
         selectionStyle = .none
         
         backgroundColor = .clear
@@ -62,7 +60,7 @@ final class OtherChatBubbleCell: UITableViewCell {
         }
     }
 
-    private func setConstraints() {
+    override func setConstraints() {
         [profileImageView, nicknameLabel, bubbleView].forEach {
             contentView.addSubview($0)
         }
