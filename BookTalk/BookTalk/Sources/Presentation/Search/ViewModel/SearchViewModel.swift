@@ -57,13 +57,16 @@ final class SearchViewModel {
             if isKeywordSearchRelay.value {
                 filteredBooks = allBooks.filter {
                     $0.keywords.contains {
-                        $0.lowercased().replacingOccurrences(of: " ", with: "").contains(trimmedSearchText)
+                        $0.lowercased()
+                            .replacingOccurrences(of: " ", with: "").contains(trimmedSearchText)
                     }
                 }
             } else {
                 filteredBooks = allBooks.filter {
-                    $0.basicBookInfo.title.lowercased().replacingOccurrences(of: " ", with: "").contains(trimmedSearchText) ||
-                    $0.basicBookInfo.author.lowercased().replacingOccurrences(of: " ", with: "").contains(trimmedSearchText)
+                    $0.basicBookInfo.title.lowercased()
+                        .replacingOccurrences(of: " ", with: "").contains(trimmedSearchText) ||
+                    $0.basicBookInfo.author.lowercased()
+                        .replacingOccurrences(of: " ", with: "").contains(trimmedSearchText)
                 }
             }
             
@@ -99,6 +102,11 @@ final class SearchViewModel {
             },
             updateSearchMode: { [weak self] isKeywordSearch in
                 self?.isKeywordSearchRelay.value = isKeywordSearch
+                if let currentSearchText =
+                    self?.filteredBooksRelay.value.first?.basicBookInfo.title
+                {
+                    self?.filterBooks(searchText: currentSearchText)
+                }
             },
             loadBooks: { [weak self] in
                 self?.allBooks = SearchMockData.books
