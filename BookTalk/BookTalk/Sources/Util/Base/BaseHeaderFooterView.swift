@@ -12,6 +12,8 @@ import Then
 
 class BaseHeaderFooterView: UITableViewHeaderFooterView {
     
+    var section: Int?
+    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         
