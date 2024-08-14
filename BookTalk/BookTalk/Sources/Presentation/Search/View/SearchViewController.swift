@@ -43,6 +43,7 @@ final class SearchViewController: BaseViewController {
         }
         
         viewModel.output.isKeywordSearch.subscribe { [weak self] isKeywordSearch in
+            self?.switchSearchModeButton.setOn(isKeywordSearch, animated: false)
             self?.searchBar.placeholder = isKeywordSearch ?
                 "키워드를 입력해주세요." : "책 이름 또는 작가 이름을 입력해주세요."
         }
@@ -54,7 +55,6 @@ final class SearchViewController: BaseViewController {
         searchBar.autocapitalizationType = .none
         searchBar.autocorrectionType = .no
         searchBar.spellCheckingType = .no
-        searchBar.placeholder = "책 이름 또는 작가 이름을 입력해주세요."
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
     }
@@ -128,6 +128,17 @@ final class SearchViewController: BaseViewController {
     }
     
     // MARK: - Helpers
+    
+    func searchWithKeyword(_ keyword: String) {
+        viewModel.input.updateSearchMode(true)
+        
+        searchBar.text = keyword
+        viewModel.input.searchTextChanged(keyword.lowercased())
+        
+        if !searchHistory.contains(keyword) { searchHistory.append(keyword) }
+        
+        tableView.reloadData()
+    }
     
     private func fetchData() {
         viewModel.input.loadBooks()
