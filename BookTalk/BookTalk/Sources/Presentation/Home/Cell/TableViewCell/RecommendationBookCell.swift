@@ -24,7 +24,6 @@ final class RecommendationBookCell: BaseTableViewCell {
     private var basicBookInfo: [BasicBookInfo] = []
     private var detailBookInfo: [DetailBookInfo] = []
     private let collectionView: UICollectionView
-    private let identifier = RecommendationBookCollectionCell.identifier
     
     // MARK: - Initializer
     
@@ -67,7 +66,7 @@ final class RecommendationBookCell: BaseTableViewCell {
     private func registerCell() {
         collectionView.register(
             RecommendationBookCollectionCell.self,
-            forCellWithReuseIdentifier: identifier
+            forCellWithReuseIdentifier: RecommendationBookCollectionCell.identifier
         )
     }
     
@@ -93,7 +92,7 @@ extension RecommendationBookCell: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: identifier,
+            withReuseIdentifier: RecommendationBookCollectionCell.identifier,
             for: indexPath
         ) as? RecommendationBookCollectionCell else {
             return UICollectionViewCell()
