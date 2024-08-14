@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class BaseHeaderFooterView: UITableViewHeaderFooterView {
+class BaseTableViewHeaderFooterView: UITableViewHeaderFooterView {
     
     var section: Int?
     

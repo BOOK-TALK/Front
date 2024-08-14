@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeHeaderView: BaseHeaderFooterView {
+final class HomeHeaderView: BaseTableViewHeaderFooterView {
     
     // MARK: - Properties
     

@@ -11,7 +11,7 @@ protocol KeywordHeaderViewDelegate: AnyObject {
     func didTapKeywordHeader(section: Int)
 }
 
-final class KeywordHeaderView: BaseHeaderFooterView {
+final class KeywordHeaderView: BaseTableViewHeaderFooterView {
     
     // MARK: - Properties
     

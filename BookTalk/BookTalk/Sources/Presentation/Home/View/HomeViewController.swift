@@ -34,7 +34,7 @@ final class HomeViewController: BaseViewController {
     }
     
     @objc private func headerViewTapped(_ sender: UITapGestureRecognizer) {
-        guard let headerView = sender.view as? BaseHeaderFooterView else { return }
+        guard let headerView = sender.view as? BaseTableViewHeaderFooterView else { return }
         guard let section = headerView.section else { return }
         
         let sectionInfo = viewModel.output.sections.value[section]
