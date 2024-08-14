@@ -11,7 +11,6 @@ final class HomeHeaderView: BaseHeaderFooterView {
     
     // MARK: - Properties
     
-    var section: Int?
     private let titleLabel = UILabel()
     private let rightArrowIcon = UIImageView()
     
