@@ -11,6 +11,8 @@
 		051156012C64C6F100230CFE /* BaseHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051156002C64C6F100230CFE /* BaseHeaderFooterView.swift */; };
 		051156032C64C71B00230CFE /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051156022C64C71B00230CFE /* BaseTableViewCell.swift */; };
 		051156052C64C73F00230CFE /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051156042C64C73F00230CFE /* BaseCollectionViewCell.swift */; };
+		052C2AE42C6C94C20023A0BC /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C2AE32C6C94C20023A0BC /* Keyword.swift */; };
+		052C2AE92C6C954A0023A0BC /* HomeSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C2AE82C6C954A0023A0BC /* HomeSectionType.swift */; };
 		054543352C5374D900E64948 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543342C5374D900E64948 /* SearchViewController.swift */; };
 		054543992C5749F300E64948 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543982C5749F300E64948 /* HomeViewModel.swift */; };
 		0545439B2C574B9000E64948 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545439A2C574B9000E64948 /* HomeSection.swift */; };
@@ -91,6 +93,8 @@
 		051156002C64C6F100230CFE /* BaseHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeaderFooterView.swift; sourceTree = "<group>"; };
 		051156022C64C71B00230CFE /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		051156042C64C73F00230CFE /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		052C2AE32C6C94C20023A0BC /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
+		052C2AE82C6C954A0023A0BC /* HomeSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionType.swift; sourceTree = "<group>"; };
 		054543342C5374D900E64948 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		054543982C5749F300E64948 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0545439A2C574B9000E64948 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
@@ -179,9 +183,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		052C2AE72C6C953F0023A0BC /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				052C2AE82C6C954A0023A0BC /* HomeSectionType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		0545432E2C53725200E64948 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				052C2AE72C6C953F0023A0BC /* Enum */,
 				054543A72C57530A00E64948 /* Header */,
 				054543952C57493400E64948 /* Cell */,
 				054543932C5748E200E64948 /* View */,
@@ -193,6 +206,7 @@
 		0545438C2C5747E300E64948 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				052C2AE32C6C94C20023A0BC /* Keyword.swift */,
 				0545439A2C574B9000E64948 /* HomeSection.swift */,
 				0545439F2C5750B200E64948 /* HomeMockData.swift */,
 			);
@@ -780,6 +794,7 @@
 				051156012C64C6F100230CFE /* BaseHeaderFooterView.swift in Sources */,
 				AB0C0F7A2C5F6D19007812C5 /* NowReadingCell.swift in Sources */,
 				AB2E7BF22C53EDD800CE43CB /* AllBookImagesViewController.swift in Sources */,
+				052C2AE42C6C94C20023A0BC /* Keyword.swift in Sources */,
 				ABED44192C666F6E0073398A /* GoalChartCell.swift in Sources */,
 				AB2E7BE32C53C17100CE43CB /* CategoryTitleCell.swift in Sources */,
 				057925412C4FF4DC00834EC6 /* GoalViewController.swift in Sources */,
@@ -812,6 +827,7 @@
 				AB0C0F592C5BD98B007812C5 /* OpenTalkPageCell.swift in Sources */,
 				054543A22C5751DD00E64948 /* SuggestionCell.swift in Sources */,
 				AB2E7C042C565B3A00CE43CB /* FirstCategoryViewController.swift in Sources */,
+				052C2AE92C6C954A0023A0BC /* HomeSectionType.swift in Sources */,
 				0545439B2C574B9000E64948 /* HomeSection.swift in Sources */,
 				AB2E7BDC2C53B64800CE43CB /* CategorySectionKind.swift in Sources */,
 				AB0C0F7E2C5F6D83007812C5 /* CompletedReadingCell.swift in Sources */,

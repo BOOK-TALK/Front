@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct BasicBookInfo {
+struct BasicBookInfo: Equatable {
     let coverImageURL: String
     let title: String
     let author: String
 }
 
-struct DetailBookInfo {
+struct DetailBookInfo: Equatable {
     let basicBookInfo: BasicBookInfo
     let keywords: [String]
     let publisher: String
@@ -22,7 +22,7 @@ struct DetailBookInfo {
     let registeredLibraries: [Library]
 }
 
-struct Library {
+struct Library: Equatable {
     let name: String
     let isAvailable: Bool
 }
