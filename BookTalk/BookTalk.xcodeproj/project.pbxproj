@@ -17,7 +17,6 @@
 		054543A02C5750B200E64948 /* HomeMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545439F2C5750B200E64948 /* HomeMockData.swift */; };
 		054543A22C5751DD00E64948 /* SuggestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543A12C5751DD00E64948 /* SuggestionCell.swift */; };
 		054543A42C57520C00E64948 /* RecommendationBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543A32C57520C00E64948 /* RecommendationBookCell.swift */; };
-		054543A62C57523B00E64948 /* RecommendationBookCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543A52C57523B00E64948 /* RecommendationBookCollectionCell.swift */; };
 		054543A92C57531C00E64948 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543A82C57531C00E64948 /* HomeHeaderView.swift */; };
 		054543F22C5A233600E64948 /* SearchMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543F12C5A233600E64948 /* SearchMockData.swift */; };
 		054543F72C5A249200E64948 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054543F62C5A249200E64948 /* SearchViewModel.swift */; };
@@ -135,7 +134,6 @@
 		0545439F2C5750B200E64948 /* HomeMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMockData.swift; sourceTree = "<group>"; };
 		054543A12C5751DD00E64948 /* SuggestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCell.swift; sourceTree = "<group>"; };
 		054543A32C57520C00E64948 /* RecommendationBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationBookCell.swift; sourceTree = "<group>"; };
-		054543A52C57523B00E64948 /* RecommendationBookCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationBookCollectionCell.swift; sourceTree = "<group>"; };
 		054543A82C57531C00E64948 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		054543F12C5A233600E64948 /* SearchMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMockData.swift; sourceTree = "<group>"; };
 		054543F62C5A249200E64948 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -317,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				0579D1152C6C9FA30032AC1C /* KeywordCollectionCell.swift */,
-				054543A52C57523B00E64948 /* RecommendationBookCollectionCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -1075,7 +1072,6 @@
 				AB2E7BE52C53C97800CE43CB /* BookWithHeaderCell.swift in Sources */,
 				AB2E7BEA2C53D69600CE43CB /* BookImageCell.swift in Sources */,
 				AB4CBA752C6E00FC009A2AB6 /* SettingViewController.swift in Sources */,
-				054543A62C57523B00E64948 /* RecommendationBookCollectionCell.swift in Sources */,
 				AB4CBA842C6E3320009A2AB6 /* BaseResponse.swift in Sources */,
 				AB8205572C6E66240014C5A5 /* GenreService.swift in Sources */,
 				AB4CBA662C6BB398009A2AB6 /* KeychainManager.swift in Sources */,
