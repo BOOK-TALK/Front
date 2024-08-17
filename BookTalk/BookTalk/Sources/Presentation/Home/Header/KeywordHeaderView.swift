@@ -70,10 +70,9 @@ final class KeywordHeaderView: BaseTableViewHeaderFooterView {
         toggleLabel.do {
             $0.font = .systemFont(ofSize: 12, weight: .medium)
             $0.textAlignment = .center
-            $0.textColor = .black
+            $0.textColor = .white
+            $0.backgroundColor = .accentOrange
             $0.clipsToBounds = true
-            $0.layer.borderWidth = 1
-            $0.layer.borderColor = UIColor.black.cgColor
             $0.layer.cornerRadius = 10
             $0.textInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
         }

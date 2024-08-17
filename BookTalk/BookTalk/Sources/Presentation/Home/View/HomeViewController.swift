@@ -80,13 +80,14 @@ final class HomeViewController: BaseViewController {
         
         tableView.do {
             $0.separatorStyle = .none
+            $0.backgroundColor = .clear
             $0.contentInsetAdjustmentBehavior = .never
             $0.automaticallyAdjustsScrollIndicatorInsets = false
-            $0.estimatedRowHeight = 100
+            $0.estimatedRowHeight = 208
             $0.estimatedSectionHeaderHeight = 50
             $0.sectionHeaderHeight = UITableView.automaticDimension
             $0.rowHeight = UITableView.automaticDimension
-            $0.contentInset = UIEdgeInsets(top: -23, left: 0, bottom: -20, right: 0)
+            $0.contentInset = UIEdgeInsets(top: -23, left: 0, bottom: 0, right: 0)
         }
     }
     
@@ -252,7 +253,7 @@ extension HomeViewController: UITableViewDelegate {
         switch sectionInfo.type {
         case .suggestion: return UITableView.automaticDimension
         case .keyword: return sectionInfo.isExpanded ? UITableView.automaticDimension : 0
-        default: return 200
+        default: return 208
         }
     }
 }
