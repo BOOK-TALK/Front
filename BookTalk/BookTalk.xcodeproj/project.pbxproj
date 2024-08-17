@@ -44,6 +44,12 @@
 		0579D1A02C70CDFA0032AC1C /* SegmentedProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579D19F2C70CDFA0032AC1C /* SegmentedProgressBar.swift */; };
 		0579D1A22C70CE300032AC1C /* SocialLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579D1A12C70CE300032AC1C /* SocialLoginButton.swift */; };
 		0579D1A92C70CE620032AC1C /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579D1A82C70CE620032AC1C /* LoginType.swift */; };
+		0579D1AB2C70CE820032AC1C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579D1AA2C70CE820032AC1C /* LoginViewController.swift */; };
+		0579D1AD2C70CE950032AC1C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579D1AC2C70CE950032AC1C /* LoginViewModel.swift */; };
+		0579D1B12C70CF6A0032AC1C /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579D1B02C70CF6A0032AC1C /* OnboardingManager.swift */; };
+		0579D1B42C70D01D0032AC1C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0579D1B32C70D01D0032AC1C /* Lottie */; };
+		0579D1B62C70D0390032AC1C /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0579D1B52C70D0390032AC1C /* WaveView.swift */; };
+		0579D1B82C70D08B0032AC1C /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 0579D1B72C70D08B0032AC1C /* login.json */; };
 		AB0C0F592C5BD98B007812C5 /* OpenTalkPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C0F582C5BD98B007812C5 /* OpenTalkPageCell.swift */; };
 		AB0C0F5F2C5BE285007812C5 /* OpenTalkPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C0F5E2C5BE285007812C5 /* OpenTalkPageType.swift */; };
 		AB0C0F612C5BE9B1007812C5 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C0F602C5BE9B1007812C5 /* ChatViewController.swift */; };
@@ -156,6 +162,11 @@
 		0579D19F2C70CDFA0032AC1C /* SegmentedProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedProgressBar.swift; sourceTree = "<group>"; };
 		0579D1A12C70CE300032AC1C /* SocialLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButton.swift; sourceTree = "<group>"; };
 		0579D1A82C70CE620032AC1C /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
+		0579D1AA2C70CE820032AC1C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0579D1AC2C70CE950032AC1C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0579D1B02C70CF6A0032AC1C /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
+		0579D1B52C70D0390032AC1C /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		0579D1B72C70D08B0032AC1C /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
 		AB0C0F582C5BD98B007812C5 /* OpenTalkPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTalkPageCell.swift; sourceTree = "<group>"; };
 		AB0C0F5E2C5BE285007812C5 /* OpenTalkPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTalkPageType.swift; sourceTree = "<group>"; };
 		AB0C0F602C5BE9B1007812C5 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0579D1B42C70D01D0032AC1C /* Lottie in Frameworks */,
 				AB22AD512C4E92C100C9A0F3 /* SnapKit in Frameworks */,
 				AB4CBA592C6BADD3009A2AB6 /* Alamofire in Frameworks */,
 				ABED440D2C66549E0073398A /* DGCharts in Frameworks */,
@@ -437,6 +449,7 @@
 		057925182C4F927C00834EC6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0579D1B72C70D08B0032AC1C /* login.json */,
 				AB22AD442C4E8D9F00C9A0F3 /* Assets.xcassets */,
 				AB22AD462C4E8D9F00C9A0F3 /* LaunchScreen.storyboard */,
 			);
@@ -491,6 +504,7 @@
 		0579D1A42C70CE4B0032AC1C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0579D1AC2C70CE950032AC1C /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -498,6 +512,7 @@
 		0579D1A52C70CE4F0032AC1C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0579D1AA2C70CE820032AC1C /* LoginViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -513,6 +528,7 @@
 		0579D1A72C70CE540032AC1C /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				0579D1B02C70CF6A0032AC1C /* OnboardingManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -936,6 +952,7 @@
 				0579D1082C6C9D5C0032AC1C /* PaddedLabel.swift */,
 				0579D19F2C70CDFA0032AC1C /* SegmentedProgressBar.swift */,
 				0579D1A12C70CE300032AC1C /* SocialLoginButton.swift */,
+				0579D1B52C70D0390032AC1C /* WaveView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -977,6 +994,7 @@
 				AB22AD532C4E92C700C9A0F3 /* Then */,
 				ABED440C2C66549E0073398A /* DGCharts */,
 				AB4CBA582C6BADD3009A2AB6 /* Alamofire */,
+				0579D1B32C70D01D0032AC1C /* Lottie */,
 			);
 			productName = BookTalk;
 			productReference = AB22AD382C4E8D9D00C9A0F3 /* BookTalk.app */;
@@ -1011,6 +1029,7 @@
 				AB22AD522C4E92C700C9A0F3 /* XCRemoteSwiftPackageReference "Then" */,
 				ABED440B2C66549E0073398A /* XCRemoteSwiftPackageReference "Charts" */,
 				AB4CBA572C6BADD3009A2AB6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0579D1B22C70D01D0032AC1C /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = AB22AD392C4E8D9D00C9A0F3 /* Products */;
 			projectDirPath = "";
@@ -1028,6 +1047,7 @@
 			files = (
 				AB22AD452C4E8D9F00C9A0F3 /* Assets.xcassets in Resources */,
 				AB22AD482C4E8D9F00C9A0F3 /* Base in Resources */,
+				0579D1B82C70D08B0032AC1C /* login.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1104,6 +1124,7 @@
 				057925392C4FF34A00834EC6 /* MainTabBarController.swift in Sources */,
 				AB0C0F6D2C5BFE5C007812C5 /* ChatViewModel.swift in Sources */,
 				056F30502C60D57100931302 /* BookInfoCell.swift in Sources */,
+				0579D1B12C70CF6A0032AC1C /* OnboardingManager.swift in Sources */,
 				051156032C64C71B00230CFE /* BaseTableViewCell.swift in Sources */,
 				AB2E7BE12C53C16500CE43CB /* BannerCell.swift in Sources */,
 				AB0C0F592C5BD98B007812C5 /* OpenTalkPageCell.swift in Sources */,
@@ -1114,12 +1135,15 @@
 				AB2E7C042C565B3A00CE43CB /* FirstCategoryViewController.swift in Sources */,
 				0545439B2C574B9000E64948 /* HomeSection.swift in Sources */,
 				AB2E7BDC2C53B64800CE43CB /* CategorySectionKind.swift in Sources */,
+				0579D1B62C70D0390032AC1C /* WaveView.swift in Sources */,
+				0579D1AB2C70CE820032AC1C /* LoginViewController.swift in Sources */,
 				AB0C0F7E2C5F6D83007812C5 /* CompletedReadingCell.swift in Sources */,
 				0579D1182C6C9FC30032AC1C /* KeywordViewModel.swift in Sources */,
 				ABED44202C667F6F0073398A /* DetailGoalViewModel.swift in Sources */,
 				ABD10DF82C52514F005F290E /* FirstCategoryCell.swift in Sources */,
 				054543F22C5A233600E64948 /* SearchMockData.swift in Sources */,
 				051155F12C64B08F00230CFE /* ReusableIdentifier.swift in Sources */,
+				0579D1AD2C70CE950032AC1C /* LoginViewModel.swift in Sources */,
 				AB2E7BCE2C53ADF700CE43CB /* BaseViewController.swift in Sources */,
 				0579253F2C4FF4D700834EC6 /* OpenTalkViewController.swift in Sources */,
 				AB4CBA4D2C6B2E4B009A2AB6 /* ChatMenuViewModel.swift in Sources */,
@@ -1375,6 +1399,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0579D1B22C70D01D0032AC1C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 		AB22AD4F2C4E92C100C9A0F3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -1410,6 +1442,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0579D1B32C70D01D0032AC1C /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0579D1B22C70D01D0032AC1C /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		AB22AD502C4E92C100C9A0F3 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AB22AD4F2C4E92C100C9A0F3 /* XCRemoteSwiftPackageReference "SnapKit" */;
