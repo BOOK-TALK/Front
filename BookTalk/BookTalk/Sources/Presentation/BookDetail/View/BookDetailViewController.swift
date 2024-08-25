@@ -49,12 +49,12 @@ final class BookDetailViewController: BaseViewController {
         setDelegate()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        let bottomInset = view.bounds.height - floatingButton.frame.minY
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        
+//        let bottomInset = view.bounds.height - floatingButton.frame.minY
+//        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+//    }
     
     // MARK: - Actions
     
