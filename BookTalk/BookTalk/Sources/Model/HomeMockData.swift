@@ -11,18 +11,7 @@ struct HomeMockData {
     static let sections: [HomeSection] = [
         HomeSection(type: .suggestion, headerTitle: "", isExpanded: false),
         HomeSection(
-            type: .keyword([
-                Keyword(keyword: "Key"),
-                Keyword(keyword: "Key 2"),
-                Keyword(keyword: "Keyword 34567890"),
-                Keyword(keyword: "Keyword 4"),
-                Keyword(keyword: "Keyword 5"),
-                Keyword(keyword: "Keyword 34567890"),
-                Keyword(keyword: "Keyword 34567890"),
-                Keyword(keyword: "Keyword 4"),
-                Keyword(keyword: "Keyword 5"),
-                Keyword(keyword: "Key")
-            ]),
+            type: .keyword([]),
             headerTitle: "지난 달 키워드 확인하기",
             isExpanded: false
         ),
