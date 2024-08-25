@@ -18,25 +18,47 @@ final class HomeViewModel {
     
     struct Output {
         let sections: Observable<[HomeSection]>
+        let nickname: Observable<String>
     }
     
     // MARK: - Properties
     
     private let sections = Observable<[HomeSection]>([])
     private let nickname = Observable<String>("")
+    private let userData: UserData
+    private let bookService: BookService
+    
     lazy var input: Input = { return bindInput() }()
     lazy var output: Output = { return transform() }()
+    
+    // MARK: - Initializer
+    
+    init(userData: UserData, bookService: BookService) {
+        self.userData = userData
+        self.bookService = bookService
+    }
 
     // MARK: - Helpers
     
     func fetchSections() {
-        sectionsRelay.value = HomeMockData.sections
-        
         Task {
             do {
-                let result = try await BookService.getKeywords()
-                print(result)
-
+                nickname.value = userData.getUser()?.nickname ?? ""
+                
+                let suggestionSection = HomeSection(
+                    type: .suggestion,
+                    headerTitle: "",
+                    isExpanded: false
+                )
+                
+                let keywords = try await BookService.getKeywords()
+                let keywordSection = HomeSection(
+                    type: .keyword(keywords),
+                    headerTitle: "지난 달 키워드 확인하기",
+                    isExpanded: false
+                )
+                
+                sections.value = [suggestionSection, keywordSection]
             } catch let error as NetworkError {
                 print(error)
             }
@@ -61,6 +83,9 @@ final class HomeViewModel {
     }
     
     private func transform() -> Output {
-        return Output(sections: sectionsRelay)
+        return Output(
+            sections: sections,
+            nickname: nickname
+        )
     }
 }
