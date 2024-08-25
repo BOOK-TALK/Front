@@ -22,7 +22,8 @@ final class HomeViewModel {
     
     // MARK: - Properties
     
-    private let sectionsRelay = Observable<[HomeSection]>([])
+    private let sections = Observable<[HomeSection]>([])
+    private let nickname = Observable<String>("")
     lazy var input: Input = { return bindInput() }()
     lazy var output: Output = { return transform() }()
 
@@ -43,9 +44,9 @@ final class HomeViewModel {
     }
     
     private func toggleSection(section: Int) {
-        var sections = sectionsRelay.value
-        sections[section].isExpanded.toggle()
-        sectionsRelay.value = sections
+        var toggleKeywordSection = sections.value
+        toggleKeywordSection[section].isExpanded.toggle()
+        sections.value = toggleKeywordSection
     }
     
     private func bindInput() -> Input {
