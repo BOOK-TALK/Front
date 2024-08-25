@@ -55,7 +55,19 @@ final class HomeViewController: BaseViewController {
     
     private func bind() {
         viewModel.output.sections.subscribe { [weak self] _ in
-            self?.tableView.reloadData()
+            self?.reloadTableView()
+        }
+        
+        viewModel.output.nickname.subscribe { [weak self] _ in
+            self?.reloadTableView()
+        }
+    }
+    
+    // MARK: - Helpers
+    
+    private func reloadTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
     
