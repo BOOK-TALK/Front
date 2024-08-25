@@ -11,8 +11,19 @@ final class HomeViewController: BaseViewController {
     
     // MARK: - Properties
     
-    private let viewModel = HomeViewModel()
+    private let viewModel: HomeViewModel
     private let tableView = UITableView(frame: .zero, style: .grouped)
+    
+    // MARK: - Initializer
+    
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle
     
@@ -176,7 +187,7 @@ extension HomeViewController: UITableViewDataSource {
             }
             cell.selectionStyle = .none
             cell.isUserInteractionEnabled = false
-            cell.bind("OOO님, 오늘의 추천 도서를 확인해보세요!")
+            cell.bind(viewModel.output.nickname.value)
             return cell
         case .keyword(let keywords):
             guard let cell = tableView.dequeueReusableCell(
@@ -186,7 +197,7 @@ extension HomeViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             cell.delegate = self
-            cell.bind(keywords: keywords.map { $0.keyword })
+            cell.bind(keywords: keywords)
             return cell
         case .recommendation(let bookInfo):
             guard let cell = tableView.dequeueReusableCell(
