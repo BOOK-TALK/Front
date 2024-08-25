@@ -16,8 +16,8 @@ final class SuggestionCell: BaseTableViewCell {
     
     // MARK: - Bind
     
-    func bind(_ text: String) {
-        suggestionLabel.text = text
+    func bind(_ nickname: String) {
+        suggestionLabel.text = "\(nickname)님, 오늘의 추천 도서를 확인해보세요!"
     }
     
     // MARK: - Set UI
