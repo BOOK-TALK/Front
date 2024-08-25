@@ -19,7 +19,7 @@ final class KeywordCell: BaseTableViewCell {
     
     weak var delegate: KeywordCellDelegate?
     
-    private var keywords: [String] = []
+    private var keywords: [Keyword] = []
     private let collectionView: UICollectionView
     private var collectionViewHeightConstraint: Constraint?
     
@@ -47,7 +47,7 @@ final class KeywordCell: BaseTableViewCell {
     
     // MARK: - Bind
     
-    func bind(keywords: [String]) {
+    func bind(keywords: [Keyword]) {
         self.keywords = keywords
         collectionView.reloadData()
         updateCollectionViewHeight()
@@ -134,7 +134,7 @@ extension KeywordCell: UICollectionViewDataSource {
         ) as? KeywordCollectionCell else {
             return UICollectionViewCell()
         }
-        cell.bind(keywords[indexPath.item])
+        cell.bind(keywords[indexPath.item].keyword)
         return cell
     }
 }
@@ -196,7 +196,7 @@ extension KeywordCell: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        let keyword = keywords[indexPath.item]
+        let keyword = keywords[indexPath.item].keyword
         let cellWidth = keyword
             .size(withAttributes: [.font:UIFont.systemFont(ofSize: 14)])
             .width + 30
