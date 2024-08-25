@@ -19,11 +19,16 @@ final class MainTabBarController: UITabBarController {
     // MARK: - Helpers
     
     private func configureViewControllers() {
+        let homeViewModel = HomeViewModel(
+            userData: UserData.shared,
+            bookService: BookService()
+        )
+        
         let home = createNavigationController(
             title: "홈",
             unselectedImage: "house",
             selectedImage: "house.fill",
-            rootViewController: HomeViewController()
+            rootViewController: HomeViewController(viewModel: homeViewModel)
         )
         
         let category = createNavigationController(
