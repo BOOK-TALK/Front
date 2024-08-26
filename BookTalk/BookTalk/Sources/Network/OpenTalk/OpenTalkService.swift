@@ -9,18 +9,20 @@ import Foundation
 
 struct OpenTalkService {
 
-    static func getOpenTalkMainList() async throws -> (
-        hotList: [OpenTalkBookModel],
-        favoriteList: [OpenTalkBookModel]
-    ) {
-        let result: OpenTalkMainResponseDTO = try await NetworkService.shared.request(
-            target: OpenTalkTarget.getOpenTalkMain
+    static func getHotOpenTalkList() async throws -> [OpenTalkBookModel] {
+        let result: [OpenTalkResponseDTO] = try await NetworkService.shared.request(
+            target: OpenTalkTarget.getHotOpenTalk
         )
 
-        return (
-            result.hotOpenTalkList.map { $0.toModel() },
-            result.favoriteOpenTalkList.map { $0.toModel() }
+        return result.map { $0.toModel() }
+    }
+
+    static func getFavoriteOpenTalkList() async throws -> [OpenTalkBookModel] {
+        let result: [OpenTalkResponseDTO] = try await NetworkService.shared.request(
+            target: OpenTalkTarget.getFavoriteOpenTalk
         )
+
+        return result.map { $0.toModel() }
     }
 
     static func postOpenTalkJoin(

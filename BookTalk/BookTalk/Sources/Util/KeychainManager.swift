@@ -52,5 +52,15 @@ final class KeychainManager {
 
         SecItemDelete(query)
     }
+
+    func saveTokens(accessToken: String, refreshToken: String) {
+        save(key: TokenKey.accessToken, token: accessToken)
+        save(key: TokenKey.refreshToken, token: refreshToken)
+    }
+
+    func deleteTokens() {
+        delete(key: TokenKey.accessToken)
+        delete(key: TokenKey.refreshToken)
+    }
 }
 

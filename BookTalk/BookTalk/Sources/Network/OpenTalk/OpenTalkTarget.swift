@@ -10,20 +10,19 @@ import Foundation
 import Alamofire
 
 enum OpenTalkTarget {
-    case getOpenTalkMain
     case postOpenTalkJoin(params: OpenTalkJoinRequestDTO)
     case postFavoriteOpenTalk(params: OpenTalkIdRequestDTO)
     case deleteFavoriteOpenTalk(params: OpenTalkIdRequestDTO)
     case getOpenTalkChatList(params: ChatListRequestDTO)
     case postChatMessage(params: ChatSendRequestDTO)
+    case getHotOpenTalk
+    case getFavoriteOpenTalk
 }
 
 extension OpenTalkTarget: TargetType {
     
     var path: String {
         switch self {
-        case .getOpenTalkMain:
-            return "/api/opentalk/main"
         case .postOpenTalkJoin:
             return "/api/opentalk/join"
         case .postFavoriteOpenTalk:
@@ -34,12 +33,18 @@ extension OpenTalkTarget: TargetType {
             return "/api/message/get"
         case .postChatMessage:
             return "/api/message/save"
+        case .getHotOpenTalk:
+            return "/api/opentalk/hot"
+        case .getFavoriteOpenTalk:
+            return "/api/opentalk/favorite"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getOpenTalkMain, .getOpenTalkChatList:
+        case .getOpenTalkChatList,
+                .getHotOpenTalk,
+                .getFavoriteOpenTalk:
             return .get
         case .postOpenTalkJoin, 
                 .postFavoriteOpenTalk,
@@ -52,7 +57,7 @@ extension OpenTalkTarget: TargetType {
     
     var task: APITask {
         switch self {
-        case .getOpenTalkMain:
+        case .getHotOpenTalk, .getFavoriteOpenTalk:
             return .requestPlain
             
         case let .postOpenTalkJoin(params):
@@ -61,10 +66,10 @@ extension OpenTalkTarget: TargetType {
         case let .postFavoriteOpenTalk(params),
             let .deleteFavoriteOpenTalk(params):
             return .requestParameters(parameters: params.toDictionary())
-
+            
         case let .getOpenTalkChatList(params):
             return .requestParameters(parameters: params.toDictionary())
-
+            
         case let .postChatMessage(params):
             return .requestParameters(parameters: params.toDictionary())
         }

@@ -16,8 +16,10 @@ struct AuthService {
             target: AuthTarget.loginWithKakao(params: params)
         )
 
-        KeychainManager.shared.save(key: TokenKey.accessToken, token: result.accessToken)
-        KeychainManager.shared.save(key: TokenKey.refreshToken, token: result.refreshToken)
+        KeychainManager.shared.saveTokens(
+            accessToken: result.accessToken,
+            refreshToken: result.refreshToken
+        )
 
         return result.isNewUser
     }
@@ -29,8 +31,10 @@ struct AuthService {
             target: AuthTarget.loginWithApple(params: params)
         )
 
-        KeychainManager.shared.save(key: TokenKey.accessToken, token: result.accessToken)
-        KeychainManager.shared.save(key: TokenKey.refreshToken, token: result.refreshToken)
+        KeychainManager.shared.saveTokens(
+            accessToken: result.accessToken,
+            refreshToken: result.refreshToken
+        )
 
         return result.isNewUser
     }
@@ -40,8 +44,7 @@ struct AuthService {
             target: AuthTarget.logout
         )
 
-        KeychainManager.shared.delete(key: TokenKey.accessToken)
-        KeychainManager.shared.delete(key: TokenKey.refreshToken)
+        KeychainManager.shared.deleteTokens()
     }
 
     static func withdraw() async throws {
@@ -49,17 +52,19 @@ struct AuthService {
             target: AuthTarget.withdraw
         )
 
-        KeychainManager.shared.delete(key: TokenKey.accessToken)
-        KeychainManager.shared.delete(key: TokenKey.refreshToken)
+        KeychainManager.shared.deleteTokens()
     }
 
-    static func reissueToken(with refreshToken: String) async throws -> Tokens {
+    static func reissueToken(with refreshToken: String) async throws {
         let params: ReissueTokenRequestDTO = .init(refreshToken: refreshToken)
 
         let newTokens: TokenResponseDTO = try await NetworkService.shared.request(
             target: AuthTarget.reissueToken(params: params)
         )
 
-        return newTokens.toModel()
+        KeychainManager.shared.saveTokens(
+            accessToken: newTokens.accessToken,
+            refreshToken: newTokens.refreshToken
+        )
     }
 }

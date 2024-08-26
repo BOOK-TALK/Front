@@ -12,54 +12,69 @@ final class OpenTalkViewModel {
     // MARK: - Properties
 
     var selectedPageType = OpenTalkPageType.hot
-    var hotOpenTalks = [OpenTalkBookModel]()
-    var favoriteOpenTalks = [OpenTalkBookModel]()
-    var openTalks = Observable<[OpenTalkBookModel]>([])
-    var isLoading = Observable(true)
+    var hotOpenTalks = Observable<[OpenTalkBookModel]>([])
+    var favoriteOpenTalks = Observable<[OpenTalkBookModel]>([])
+    var loadState = Observable(LoadState.initial)
 
     // MARK: - Helpers
 
     enum Action {
         case setPageType(_ pageType: OpenTalkPageType)
-        case loadOpenTalks(_ pageType: OpenTalkPageType)
     }
 
     func send(action: Action) {
         switch action {
         case let .setPageType(selectedPage):
             selectedPageType = selectedPage
-            setOpenTalks(of: selectedPage)
 
-        case let .loadOpenTalks(selectedPage):
-            isLoading.value = true
-            openTalks.value.removeAll()
+            favoriteOpenTalks.value.removeAll()
+            hotOpenTalks.value.removeAll()
 
-            Task {
-                do {
-                    let result = try await OpenTalkService.getOpenTalkMainList()
-
-                    await MainActor.run {
-                        hotOpenTalks = result.hotList
-                        favoriteOpenTalks = result.favoriteList
-
-                        setOpenTalks(of: selectedPage)
-                        isLoading.value = false
-                    }
-                    
-                } catch let error as NetworkError {
-                    isLoading.value = false
-                    print(error.localizedDescription)
-                }
+            switch selectedPage {
+            case .hot:
+                loadHotOpenTalk()
+            case .liked:
+                loadFavoriteOpenTalk()
             }
         }
     }
 
-    private func setOpenTalks(of selectedPage: OpenTalkPageType) {
-        switch selectedPage {
-        case .hot:
-            openTalks.value = hotOpenTalks
-        case .liked:
-            openTalks.value = favoriteOpenTalks
+    private func loadHotOpenTalk() {
+        loadState.value = .loading
+
+        Task {
+            do {
+                let result = try await OpenTalkService.getHotOpenTalkList()
+
+                await MainActor.run {
+                    hotOpenTalks.value = result
+                    loadState.value = .completed
+                }
+
+            } catch let error as NetworkError {
+                print(error.localizedDescription)
+                loadState.value = .completed
+            }
         }
     }
+
+    private func loadFavoriteOpenTalk() {
+        loadState.value = .loading
+
+        Task {
+            do {
+                let result = try await OpenTalkService.getFavoriteOpenTalkList()
+
+                await MainActor.run {
+                    favoriteOpenTalks.value = result
+                    loadState.value = .completed
+                }
+
+            } catch let error as NetworkError {
+                print(error.localizedDescription)
+                loadState.value = .completed
+            }
+        }
+    }
+
 }

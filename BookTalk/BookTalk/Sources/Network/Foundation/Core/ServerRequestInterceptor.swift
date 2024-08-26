@@ -57,20 +57,18 @@ final class ServerRequestInterceptor: RequestInterceptor {
         Task {
             do {
                 // 토큰 재발급 api 호출, 성공 시 키체인에 새 토큰들 저장
-                let newTokens = try await AuthService.reissueToken(with: refreshToken)
-
-                KeychainManager.shared.save(key: TokenKey.accessToken, token: newTokens.accessToken)
-                KeychainManager.shared.save(key: TokenKey.refreshToken, token: newTokens.refreshToken)
+                try await AuthService.reissueToken(with: refreshToken)
 
                 completion(.retry)
                 
             } catch let error as NetworkError {
                 print(error.localizedDescription)
+
+                completion(.doNotRetryWithError(error))
+                
                 // 토큰 재발급 불가 시, 로그아웃 처리
                 UserDefaults.standard.set(false, forKey: UserDefaults.Key.isLoggedIn)
                 NotificationCenter.default.post(name: .authStateChanged, object: nil)
-
-                completion(.doNotRetryWithError(error))
             }
         }
     }

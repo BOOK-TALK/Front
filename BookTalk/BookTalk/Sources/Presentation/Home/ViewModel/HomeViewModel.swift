@@ -27,70 +27,64 @@ final class HomeViewModel {
             isKeywordOpened.value = newState
 
         case .loadBooks:
-            loadKeyword()
-            loadHotTrend()
-            loadThisWeekTrend()
-            loadAgeTrend()
-        }
-    }
-
-    private func loadKeyword() {
-        Task {
-            do {
-                let result = try await BookService.getKeywords()
-
-                await MainActor.run {
-                    keywordOb.value = result
-                }
-
-            } catch let error as NetworkError {
-                print(error.localizedDescription)
+            Task {
+                await loadKeyword()
+                await loadHotTrend()
+                await loadThisWeekTrend()
+                await loadAgeTrend()
             }
         }
     }
 
-    private func loadHotTrend() {
-        Task {
-            do {
-                let result = try await HomeService.getHotTrend()
+    private func loadKeyword() async {
+        do {
+            let result = try await BookService.getKeywords()
 
-                await MainActor.run {
-                    popularLoansOb.value.books = result
-                }
-            } catch let error as NetworkError {
-                print(error.localizedDescription)
+            await MainActor.run {
+                keywordOb.value = result
             }
+
+        } catch {
+            print(error.localizedDescription)
         }
     }
 
-    private func loadThisWeekTrend() {
-        Task {
-            do {
-                let result = try await HomeService.getThisWeekTrend()
+    private func loadHotTrend() async {
+        do {
+            let result = try await HomeService.getHotTrend()
 
-                await MainActor.run {
-                    thisWeekRecommendOb.value.books = result
-                }
-            } catch let error as NetworkError {
-                print(error.localizedDescription)
+            await MainActor.run {
+                popularLoansOb.value.books = result
             }
+        } catch {
+            print(error.localizedDescription)
         }
     }
 
-    private func loadAgeTrend() {
+    private func loadThisWeekTrend() async {
+        do {
+            let result = try await HomeService.getThisWeekTrend()
+
+            await MainActor.run {
+                thisWeekRecommendOb.value.books = result
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func loadAgeTrend() async {
         guard let userBirth = UserData.shared.getUser()?.birth else { return }
         let userAge = userBirth.toKoreanAge()
 
-        Task {
-            do {
-                let result = try await HomeService.getAgeTrend(of: userAge)
+        do {
+            let result = try await HomeService.getAgeTrend(of: userAge)
 
-                await MainActor.run {
-                    ageTrendOb.value.books = result
-                }
-            } catch let error as NetworkError {
-                print(error.localizedDescription)
+            await MainActor.run {
+                ageTrendOb.value.books = result
             }
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
