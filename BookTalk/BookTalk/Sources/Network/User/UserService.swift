@@ -29,7 +29,8 @@ struct UserService {
         let body: EditUserInfoRequestDTO = .init(
             nickname: nickname,
             gender: gender.rawValue,
-            birthDate: birthDate
+            birthDate: birthDate,
+            profileImageUrl: "" // TODO: 이미지 추가
         )
 
         let result: EditUserInfoResponseDTO = try await NetworkService.shared.request(target: UserTarget.editUserInfo(body: body))

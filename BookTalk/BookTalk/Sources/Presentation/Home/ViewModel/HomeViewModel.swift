@@ -74,11 +74,10 @@ final class HomeViewModel {
     }
 
     private func loadAgeTrend() async {
-        guard let userBirth = UserData.shared.getUser()?.birth else { return }
-        let userAge = userBirth.toKoreanAge()
+        let age = UserData.shared.getUser()?.birth?.toKoreanAge() ?? ""
 
         do {
-            let result = try await HomeService.getAgeTrend(of: userAge)
+            let result = try await HomeService.getAgeTrend(of: age)
 
             await MainActor.run {
                 ageTrendOb.value.books = result

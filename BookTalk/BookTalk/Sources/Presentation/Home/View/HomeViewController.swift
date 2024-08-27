@@ -189,7 +189,9 @@ extension HomeViewController: UITableViewDataSource {
             } else if sectionKind == .ageRecommend {
                 cell.bind(
                     .init(
-                        headerTitle: "\(UserData.shared.getUser()?.nickname ?? "이름 없음")님 나이대에서 인기 있는 도서",
+                        headerTitle:
+                            UserData.shared.getUser()?.birth != nil ?
+                        "\(UserData.shared.getUser()?.nickname ?? "이름 없음")님 나이대에서 인기 있는 도서" : "인기 대출 도서",
                         books: viewModel.ageTrendOb.value.books
                     ))
             }

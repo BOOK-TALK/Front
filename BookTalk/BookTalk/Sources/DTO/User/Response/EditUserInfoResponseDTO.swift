@@ -10,7 +10,7 @@ import Foundation
 struct EditUserInfoResponseDTO: Decodable {
     let nickname: String
     let gender: String
-    let birthDate: String
+    let birthDate: String?
 }
 
 extension EditUserInfoResponseDTO {

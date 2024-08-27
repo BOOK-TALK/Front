@@ -67,7 +67,12 @@ final class ProfileInfoView: BaseCollectionViewHeaderFooterView {
         guard let userInfo = userInfo else { return }
         
         nameLabel.text = userInfo.nickname
-        genderAndAgeLabel.text = "\(userInfo.gender.koreanTitle)/\(userInfo.birth.toKoreanAge())"
+        
+        if let age = userInfo.birth?.toKoreanAge() {
+            genderAndAgeLabel.text = "\(userInfo.gender.koreanTitle)/\(age)살"
+        } else {
+            genderAndAgeLabel.text = "\(userInfo.gender.koreanTitle)"
+        }
     }
     
     // MARK: - Helpers

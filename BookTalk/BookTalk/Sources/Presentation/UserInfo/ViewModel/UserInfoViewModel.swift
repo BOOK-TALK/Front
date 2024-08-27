@@ -12,7 +12,7 @@ struct UserInfoViewModel {
     // MARK: - Properties
 
     private(set) var nickname = Observable("")
-    private(set) var selectedGender = Observable<GenderType?>(nil)
+    private(set) var selectedGender = Observable(GenderType.notSelected)
     private(set) var birthDate = Observable<Date?>(nil)
     private(set) var isFormValid = Observable(false)
     private(set) var popToMyPage = Observable(false)
@@ -36,9 +36,9 @@ struct UserInfoViewModel {
         let oldUserInfo = UserData.shared.getUser()
         guard let oldUserInfo = oldUserInfo else { return }
 
-        nickname.value = oldUserInfo.nickname ?? ""
+        nickname.value = oldUserInfo.nickname
         selectedGender.value = oldUserInfo.gender
-        birthDate.value = oldUserInfo.birth.toDate()
+        birthDate.value = oldUserInfo.birth?.toDate() ?? nil
     }
 
 
@@ -99,8 +99,7 @@ struct UserInfoViewModel {
     // MARK: - Helpers
     
     private func validateForm() {
-        isFormValid.value =
-            isNicknameValid() && selectedGender.value != nil && birthDate.value != nil
+        isFormValid.value = isNicknameValid()
     }
     
     private func isNicknameValid() -> Bool {

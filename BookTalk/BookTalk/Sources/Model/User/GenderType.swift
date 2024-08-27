@@ -8,13 +8,13 @@
 import Foundation
 
 enum GenderType: String, Codable {
-    case notSelcted = "NOT_SELECTED"
+    case notSelected = "NOT_SELECTED"
     case man = "MAN"
     case woman = "WOMAN"
 
     var code: String {
         switch self {
-        case .notSelcted:
+        case .notSelected:
             return "G0"
         case .man:
             return "G1"
@@ -25,8 +25,8 @@ enum GenderType: String, Codable {
 
     var koreanTitle: String {
         switch self {
-        case .notSelcted:
-            return "선택없음"
+        case .notSelected:
+            return "선택 없음"
         case .man:
             return "남"
         case .woman:
@@ -37,13 +37,13 @@ enum GenderType: String, Codable {
     init(code: String) {
         switch code {
         case "G0":
-            self = .notSelcted
+            self = .notSelected
         case "G1":
             self = .man
         case "G2":
             self = .woman
         default:
-            self = .notSelcted
+            self = .notSelected
         }
     }
 }
