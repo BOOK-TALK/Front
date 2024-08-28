@@ -219,7 +219,7 @@ final class ChatViewController: BaseViewController {
             guard let self = self else { return }
 
             chatTableView.scrollToRow(
-                at: IndexPath(row: viewModel.chats.value.count - 1, section: 0),
+                at: IndexPath(row: max(viewModel.chats.value.count - 1, 0), section: 0),
                 at: .bottom,
                 animated: false
             )
@@ -242,26 +242,35 @@ final class ChatViewController: BaseViewController {
     }
 
     @objc private func keyboardWillShow(notification: NSNotification) {
-        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
-            as? NSValue {
-           let keyboardRectangle = keyboardFrame.cgRectValue
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardHeight = keyboardFrame.cgRectValue.height
 
-            UIView.animate(
-                withDuration: 0.3,
-                animations: {
-                    self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardRectangle.height)
-                }
-            )
+            textInputView.snp.remakeConstraints {
+                $0.leading.trailing.equalToSuperview()
+                $0.bottom.equalToSuperview().offset(-keyboardHeight)
+                $0.height.equalTo(55)
+            }
+
+            view.layoutIfNeeded()
+
+            let contentHeight = chatTableView.contentSize.height
+            let tableViewHeight = chatTableView.frame.height - keyboardHeight
+
+            if contentHeight > tableViewHeight {
+                let lastIndexPath = IndexPath(row: max(viewModel.chats.value.count - 1, 0), section: 0)
+                chatTableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: true)
+            }
         }
     }
 
     @objc private func keyboardWillHide(notification: NSNotification) {
-        UIView.animate(
-            withDuration: 0.3,
-            animations: {
-                self.view.transform = .identity
-            }
-        )
+        textInputView.snp.remakeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(55)
+        }
+
+        view.layoutIfNeeded()
     }
 
     @objc private func menuButtonDidTapped() {
