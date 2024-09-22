@@ -22,7 +22,6 @@
 		054544152C5AA80700E64948 /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054544142C5AA80700E64948 /* BookInfo.swift */; };
 		054544232C5AAEFC00E64948 /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054544222C5AAEFC00E64948 /* SearchHistoryCell.swift */; };
 		054FA16B2C7463B50007D9C9 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 054FA16A2C7463B50007D9C9 /* login.json */; };
-		054FA16E2C7463D40007D9C9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 054FA16D2C7463D40007D9C9 /* Lottie */; };
 		054FA1752C74643C0007D9C9 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FA1742C74643C0007D9C9 /* OnboardingManager.swift */; };
 		054FA1772C74649B0007D9C9 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FA1762C74649B0007D9C9 /* LoginType.swift */; };
 		054FA1792C7464C50007D9C9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FA1782C7464C50007D9C9 /* LoginViewModel.swift */; };
@@ -60,8 +59,6 @@
 		05CB069E2C769A1700673947 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB069D2C769A1700673947 /* UserInfoViewController.swift */; };
 		05F48B802C8C767600DABF81 /* WeahterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F48B7F2C8C767600DABF81 /* WeahterService.swift */; };
 		05F48B822C8D9AC800DABF81 /* UIImage+WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F48B812C8D9AC800DABF81 /* UIImage+WeatherCondition.swift */; };
-		AB0784812C74F8910017812F /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AB0784802C74F8910017812F /* KakaoSDKAuth */; };
-		AB0784832C74F8910017812F /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = AB0784822C74F8910017812F /* KakaoSDKUser */; };
 		AB0784852C74FA1D0017812F /* OAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0784842C74FA1D0017812F /* OAuthManager.swift */; };
 		AB07848B2C75A89E0017812F /* ISBNRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB07848A2C75A89E0017812F /* ISBNRequestDTO.swift */; };
 		AB07848D2C75A92D0017812F /* BookDetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB07848C2C75A92D0017812F /* BookDetailResponseDTO.swift */; };
@@ -85,8 +82,6 @@
 		AB22AD3E2C4E8D9D00C9A0F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22AD3D2C4E8D9D00C9A0F3 /* SceneDelegate.swift */; };
 		AB22AD452C4E8D9F00C9A0F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB22AD442C4E8D9F00C9A0F3 /* Assets.xcassets */; };
 		AB22AD482C4E8D9F00C9A0F3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AB22AD472C4E8D9F00C9A0F3 /* Base */; };
-		AB22AD512C4E92C100C9A0F3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB22AD502C4E92C100C9A0F3 /* SnapKit */; };
-		AB22AD542C4E92C700C9A0F3 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AB22AD532C4E92C700C9A0F3 /* Then */; };
 		AB23BF0A2C638EA300E12702 /* CategorySelectModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB23BF092C638EA300E12702 /* CategorySelectModalViewModel.swift */; };
 		AB23BF102C64A02900E12702 /* ReadingPeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB23BF0F2C64A02900E12702 /* ReadingPeopleCell.swift */; };
 		AB2E7BC12C525CC700CE43CB /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2E7BC02C525CC700CE43CB /* CategoryType.swift */; };
@@ -114,7 +109,6 @@
 		AB4CBA522C6B31BC009A2AB6 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CBA512C6B31BC009A2AB6 /* AddBookViewController.swift */; };
 		AB4CBA542C6B3FCE009A2AB6 /* AddBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CBA532C6B3FCE009A2AB6 /* AddBookViewModel.swift */; };
 		AB4CBA562C6B44D7009A2AB6 /* LikedTitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CBA552C6B44D6009A2AB6 /* LikedTitleHeaderView.swift */; };
-		AB4CBA592C6BADD3009A2AB6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AB4CBA582C6BADD3009A2AB6 /* Alamofire */; };
 		AB4CBA5D2C6BAFA5009A2AB6 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CBA5C2C6BAFA5009A2AB6 /* NetworkEnvironment.swift */; };
 		AB4CBA602C6BB0E9009A2AB6 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CBA5F2C6BB0E9009A2AB6 /* TargetType.swift */; };
 		AB4CBA622C6BB191009A2AB6 /* APITask.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CBA612C6BB191009A2AB6 /* APITask.swift */; };
@@ -128,7 +122,6 @@
 		AB4CBA7B2C6E0755009A2AB6 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CBA7A2C6E0755009A2AB6 /* SettingViewModel.swift */; };
 		AB4CBA812C6E09CD009A2AB6 /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CBA802C6E09CD009A2AB6 /* SettingType.swift */; };
 		AB4CBA842C6E3320009A2AB6 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4CBA832C6E3320009A2AB6 /* BaseResponse.swift */; };
-		AB4ECF462C70848C00DC24A0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AB4ECF452C70848C00DC24A0 /* Kingfisher */; };
 		AB4F962A2C805DE800DE55E6 /* LoadGoalRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F96292C805DE800DE55E6 /* LoadGoalRequestDTO.swift */; };
 		AB4F962C2C808DB000DE55E6 /* AddRecordReqeustDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F962B2C808DB000DE55E6 /* AddRecordReqeustDTO.swift */; };
 		AB4F962E2C8090FE00DE55E6 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F962D2C8090FE00DE55E6 /* UITextField+.swift */; };
@@ -209,7 +202,6 @@
 		ABC820362C7B279C001AB371 /* ChatResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC820352C7B279C001AB371 /* ChatResponseDTO.swift */; };
 		ABD10DF82C52514F005F290E /* FirstCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD10DF72C52514F005F290E /* FirstCategoryCell.swift */; };
 		ABDADA3E2C70A6A3009ED3BB /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDADA3D2C70A6A3009ED3BB /* Date+.swift */; };
-		ABED440D2C66549E0073398A /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = ABED440C2C66549E0073398A /* DGCharts */; };
 		ABED44102C665CDB0073398A /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABED440F2C665CDB0073398A /* GoalViewModel.swift */; };
 		ABED44132C665DD90073398A /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABED44122C665DD90073398A /* GoalModel.swift */; };
 		ABED44192C666F6E0073398A /* GoalChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABED44182C666F6E0073398A /* GoalChartCell.swift */; };
@@ -221,6 +213,7 @@
 		ABEF81352C7BD15C007D1DC7 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEF81342C7BD15C007D1DC7 /* HomeService.swift */; };
 		ABEF81382C7BD4B1007D1DC7 /* HotTrendResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEF81372C7BD4B1007D1DC7 /* HotTrendResponseDTO.swift */; };
 		ABF5D4262C7B4E49004E625C /* ChatSendRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF5D4252C7B4E49004E625C /* ChatSendRequestDTO.swift */; };
+		C51F63E2C0E5A9C3C5761D22 /* Pods_BookTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3C9B035AEF9DDDF1BDFA51 /* Pods_BookTalk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -257,7 +250,6 @@
 		056F304F2C60D57100931302 /* BookInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoCell.swift; sourceTree = "<group>"; };
 		056F30512C60D5A100931302 /* BorrowableLibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowableLibraryCell.swift; sourceTree = "<group>"; };
 		056F30532C60D5D400931302 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
-		0574201D2C83274300570F33 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		057925382C4FF34A00834EC6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		0579253A2C4FF4CA00834EC6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0579253E2C4FF4D700834EC6 /* OpenTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTalkViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +269,9 @@
 		05CB069D2C769A1700673947 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		05F48B7F2C8C767600DABF81 /* WeahterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeahterService.swift; sourceTree = "<group>"; };
 		05F48B812C8D9AC800DABF81 /* UIImage+WeatherCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+WeatherCondition.swift"; sourceTree = "<group>"; };
+		5A3C9B035AEF9DDDF1BDFA51 /* Pods_BookTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F6A0C9DBEC9F7412B01151C /* Pods-BookTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTalk.debug.xcconfig"; path = "Target Support Files/Pods-BookTalk/Pods-BookTalk.debug.xcconfig"; sourceTree = "<group>"; };
+		A20CDB19A7B49D5CD893BCCC /* Pods-BookTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTalk.release.xcconfig"; path = "Target Support Files/Pods-BookTalk/Pods-BookTalk.release.xcconfig"; sourceTree = "<group>"; };
 		AB0784842C74FA1D0017812F /* OAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthManager.swift; sourceTree = "<group>"; };
 		AB0784862C74FF2C0017812F /* BookTalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookTalk.entitlements; sourceTree = "<group>"; };
 		AB07848A2C75A89E0017812F /* ISBNRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNRequestDTO.swift; sourceTree = "<group>"; };
@@ -422,6 +417,7 @@
 		ABC820332C7B2711001AB371 /* OpenTalkJoinResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTalkJoinResponseDTO.swift; sourceTree = "<group>"; };
 		ABC820352C7B279C001AB371 /* ChatResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponseDTO.swift; sourceTree = "<group>"; };
 		ABD10DF72C52514F005F290E /* FirstCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCategoryCell.swift; sourceTree = "<group>"; };
+		ABD3CA9D2CA06E7500438747 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Secrets.xcconfig; path = BookTalk/Secrets.xcconfig; sourceTree = "<group>"; };
 		ABDADA3D2C70A6A3009ED3BB /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		ABED440F2C665CDB0073398A /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		ABED44122C665DD90073398A /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
@@ -441,14 +437,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0784812C74F8910017812F /* KakaoSDKAuth in Frameworks */,
-				AB22AD512C4E92C100C9A0F3 /* SnapKit in Frameworks */,
-				AB4CBA592C6BADD3009A2AB6 /* Alamofire in Frameworks */,
-				ABED440D2C66549E0073398A /* DGCharts in Frameworks */,
-				AB0784832C74F8910017812F /* KakaoSDKUser in Frameworks */,
-				AB22AD542C4E92C700C9A0F3 /* Then in Frameworks */,
-				AB4ECF462C70848C00DC24A0 /* Kingfisher in Frameworks */,
-				054FA16E2C7463D40007D9C9 /* Lottie in Frameworks */,
+				C51F63E2C0E5A9C3C5761D22 /* Pods_BookTalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,6 +762,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		27C03F4C2BCBED5F01CAB8D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F6A0C9DBEC9F7412B01151C /* Pods-BookTalk.debug.xcconfig */,
+				A20CDB19A7B49D5CD893BCCC /* Pods-BookTalk.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		91B43ABA286ACA46C34D5B87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A3C9B035AEF9DDDF1BDFA51 /* Pods_BookTalk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB0784892C75A88E0017812F /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -866,9 +872,11 @@
 		AB22AD2F2C4E8D9D00C9A0F3 = {
 			isa = PBXGroup;
 			children = (
-				0574201D2C83274300570F33 /* Secrets.xcconfig */,
+				ABD3CA9D2CA06E7500438747 /* Secrets.xcconfig */,
 				AB22AD3A2C4E8D9D00C9A0F3 /* BookTalk */,
 				AB22AD392C4E8D9D00C9A0F3 /* Products */,
+				27C03F4C2BCBED5F01CAB8D3 /* Pods */,
+				91B43ABA286ACA46C34D5B87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1654,25 +1662,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB22AD4C2C4E8D9F00C9A0F3 /* Build configuration list for PBXNativeTarget "BookTalk" */;
 			buildPhases = (
+				61874F8286F007E372A5D9F9 /* [CP] Check Pods Manifest.lock */,
 				AB22AD342C4E8D9D00C9A0F3 /* Sources */,
 				AB22AD352C4E8D9D00C9A0F3 /* Frameworks */,
 				AB22AD362C4E8D9D00C9A0F3 /* Resources */,
+				36F2A35BEF36A3EEC1836C65 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = BookTalk;
-			packageProductDependencies = (
-				AB22AD502C4E92C100C9A0F3 /* SnapKit */,
-				AB22AD532C4E92C700C9A0F3 /* Then */,
-				ABED440C2C66549E0073398A /* DGCharts */,
-				AB4CBA582C6BADD3009A2AB6 /* Alamofire */,
-				AB4ECF452C70848C00DC24A0 /* Kingfisher */,
-				054FA16D2C7463D40007D9C9 /* Lottie */,
-				AB0784802C74F8910017812F /* KakaoSDKAuth */,
-				AB0784822C74F8910017812F /* KakaoSDKUser */,
-			);
 			productName = BookTalk;
 			productReference = AB22AD382C4E8D9D00C9A0F3 /* BookTalk.app */;
 			productType = "com.apple.product-type.application";
@@ -1701,15 +1701,6 @@
 				Base,
 			);
 			mainGroup = AB22AD2F2C4E8D9D00C9A0F3;
-			packageReferences = (
-				AB22AD4F2C4E92C100C9A0F3 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				AB22AD522C4E92C700C9A0F3 /* XCRemoteSwiftPackageReference "Then" */,
-				ABED440B2C66549E0073398A /* XCRemoteSwiftPackageReference "Charts" */,
-				AB4CBA572C6BADD3009A2AB6 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				AB4ECF442C70848C00DC24A0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				054FA16C2C7463D40007D9C9 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				AB07847F2C74F8910017812F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
-			);
 			productRefGroup = AB22AD392C4E8D9D00C9A0F3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1731,6 +1722,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36F2A35BEF36A3EEC1836C65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookTalk/Pods-BookTalk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookTalk/Pods-BookTalk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookTalk/Pods-BookTalk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61874F8286F007E372A5D9F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookTalk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB22AD342C4E8D9D00C9A0F3 /* Sources */ = {
@@ -2078,7 +2111,7 @@
 		};
 		AB22AD4D2C4E8D9F00C9A0F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0574201D2C83274300570F33 /* Secrets.xcconfig */;
+			baseConfigurationReference = 6F6A0C9DBEC9F7412B01151C /* Pods-BookTalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2087,6 +2120,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U6TKDM29D9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookTalk/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "읽을거리";
@@ -2118,7 +2152,7 @@
 		};
 		AB22AD4E2C4E8D9F00C9A0F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0574201D2C83274300570F33 /* Secrets.xcconfig */;
+			baseConfigurationReference = A20CDB19A7B49D5CD893BCCC /* Pods-BookTalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2127,6 +2161,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U6TKDM29D9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookTalk/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "읽을거리";
@@ -2178,108 +2213,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		054FA16C2C7463D40007D9C9 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.5.0;
-			};
-		};
-		AB07847F2C74F8910017812F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		AB22AD4F2C4E92C100C9A0F3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
-			};
-		};
-		AB22AD522C4E92C700C9A0F3 /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		AB4CBA572C6BADD3009A2AB6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
-		AB4ECF442C70848C00DC24A0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.12.0;
-			};
-		};
-		ABED440B2C66549E0073398A /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChartsOrg/Charts.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		054FA16D2C7463D40007D9C9 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 054FA16C2C7463D40007D9C9 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
-		AB0784802C74F8910017812F /* KakaoSDKAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AB07847F2C74F8910017812F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDKAuth;
-		};
-		AB0784822C74F8910017812F /* KakaoSDKUser */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AB07847F2C74F8910017812F /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDKUser;
-		};
-		AB22AD502C4E92C100C9A0F3 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AB22AD4F2C4E92C100C9A0F3 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		AB22AD532C4E92C700C9A0F3 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AB22AD522C4E92C700C9A0F3 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
-		};
-		AB4CBA582C6BADD3009A2AB6 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AB4CBA572C6BADD3009A2AB6 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		AB4ECF452C70848C00DC24A0 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AB4ECF442C70848C00DC24A0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		ABED440C2C66549E0073398A /* DGCharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ABED440B2C66549E0073398A /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = DGCharts;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB22AD302C4E8D9D00C9A0F3 /* Project object */;
 }
