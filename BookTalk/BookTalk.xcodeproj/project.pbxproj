@@ -201,6 +201,8 @@
 		ABC820342C7B2711001AB371 /* OpenTalkJoinResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC820332C7B2711001AB371 /* OpenTalkJoinResponseDTO.swift */; };
 		ABC820362C7B279C001AB371 /* ChatResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC820352C7B279C001AB371 /* ChatResponseDTO.swift */; };
 		ABD10DF82C52514F005F290E /* FirstCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD10DF72C52514F005F290E /* FirstCategoryCell.swift */; };
+		ABD3CAA02CA072C500438747 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3CA9F2CA072C500438747 /* ChatService.swift */; };
+		ABD3CAC32CA4618A00438747 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3CAC22CA4618A00438747 /* Log.swift */; };
 		ABDADA3E2C70A6A3009ED3BB /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDADA3D2C70A6A3009ED3BB /* Date+.swift */; };
 		ABED44102C665CDB0073398A /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABED440F2C665CDB0073398A /* GoalViewModel.swift */; };
 		ABED44132C665DD90073398A /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABED44122C665DD90073398A /* GoalModel.swift */; };
@@ -418,6 +420,8 @@
 		ABC820352C7B279C001AB371 /* ChatResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponseDTO.swift; sourceTree = "<group>"; };
 		ABD10DF72C52514F005F290E /* FirstCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCategoryCell.swift; sourceTree = "<group>"; };
 		ABD3CA9D2CA06E7500438747 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Secrets.xcconfig; path = BookTalk/Secrets.xcconfig; sourceTree = "<group>"; };
+		ABD3CA9F2CA072C500438747 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		ABD3CAC22CA4618A00438747 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		ABDADA3D2C70A6A3009ED3BB /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		ABED440F2C665CDB0073398A /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		ABED44122C665DD90073398A /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
@@ -908,6 +912,7 @@
 				AB3F15452C611DC100C77E13 /* Observable.swift */,
 				AB4CBA652C6BB398009A2AB6 /* KeychainManager.swift */,
 				ABAAFDBA2C76FE9E00FDA084 /* LoadState.swift */,
+				ABD3CAC22CA4618A00438747 /* Log.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1050,6 +1055,7 @@
 				AB4CBA5E2C6BB059009A2AB6 /* Foundation */,
 				AB9C5D6F2C78C47E00CE44AF /* Auth */,
 				AB5D35592C775DE70028995C /* User */,
+				ABD3CA9E2CA0727400438747 /* Chat */,
 				AB8205532C6E66060014C5A5 /* Genre */,
 				ABB901AD2C727A2000727875 /* Book */,
 				ABB901C82C7398AC00727875 /* OpenTalk */,
@@ -1527,6 +1533,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ABD3CA9E2CA0727400438747 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				ABD3CA9F2CA072C500438747 /* ChatService.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		ABDC09102C782A5700A54462 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -1792,6 +1806,7 @@
 				0579D1162C6C9FA30032AC1C /* KeywordCollectionCell.swift in Sources */,
 				AB4CBA812C6E09CD009A2AB6 /* SettingType.swift in Sources */,
 				056F30522C60D5A100931302 /* BorrowableLibraryCell.swift in Sources */,
+				ABD3CAC32CA4618A00438747 /* Log.swift in Sources */,
 				AB09F38C2C80D4760098A53D /* FInishedGoalViewController.swift in Sources */,
 				05C2F11E2C8041A100ACFBAE /* WeatherImage.swift in Sources */,
 				054544232C5AAEFC00E64948 /* SearchHistoryCell.swift in Sources */,
@@ -1811,6 +1826,7 @@
 				AB4CBA842C6E3320009A2AB6 /* BaseResponse.swift in Sources */,
 				AB8205572C6E66240014C5A5 /* GenreService.swift in Sources */,
 				AB4F96302C80AE2700DE55E6 /* GoalUserRequestDTO.swift in Sources */,
+				ABD3CAA02CA072C500438747 /* ChatService.swift in Sources */,
 				054FA18E2C748D8D0007D9C9 /* MyPageStickyTabView.swift in Sources */,
 				ABDADA3E2C70A6A3009ED3BB /* Date+.swift in Sources */,
 				ABAAFDB52C76FDE300FDA084 /* SearchService.swift in Sources */,
@@ -2125,6 +2141,11 @@
 				INFOPLIST_FILE = BookTalk/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "읽을거리";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
+				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 설정을 위해 카메라 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자의 현재 위치를 기반으로 날씨 정보를 제공하기 위해 위치 접근이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "백그라운드에서도 위치 정보를 활용하여 지속적인 서비스를 제공하기 위해 위치 접근이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치를 기반으로 날씨 정보를 제공하기 위해 위치 접근이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 설정을 위해 앨범 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -2147,6 +2168,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				WEBSOCKET_URL = "wss://www.readables.site/ws-stomp";
 			};
 			name = Debug;
 		};
@@ -2166,6 +2188,11 @@
 				INFOPLIST_FILE = BookTalk/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "읽을거리";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
+				INFOPLIST_KEY_NSCameraUsageDescription = "프로필 사진 설정을 위해 카메라 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자의 현재 위치를 기반으로 날씨 정보를 제공하기 위해 위치 접근이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "백그라운드에서도 위치 정보를 활용하여 지속적인 서비스를 제공하기 위해 위치 접근이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치를 기반으로 날씨 정보를 제공하기 위해 위치 접근이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 설정을 위해 앨범 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -2188,6 +2215,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				WEBSOCKET_URL = "wss://www.readables.site/ws-stomp";
 			};
 			name = Release;
 		};

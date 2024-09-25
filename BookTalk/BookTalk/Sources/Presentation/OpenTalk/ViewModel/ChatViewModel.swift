@@ -21,7 +21,9 @@ final class ChatViewModel {
 
     let isbn: String
 
-    var openTalkId: Int?
+    var openTalkId: Int? 
+
+    private var chatService = ChatService()
 
     // MARK: - Initializer
 
@@ -47,6 +49,8 @@ final class ChatViewModel {
                         of: isbn,
                         pageSize: pageSize
                     )
+
+                    chatService.openTalkId = openTalkInfo.openTalkId
 
                     await MainActor.run {
                         chats.value = openTalkInfo.chats.reversed()
@@ -85,21 +89,27 @@ final class ChatViewModel {
 
         case let .sendMessage(openTalkId, text):
             guard let openTalkId = openTalkId else { return }
-            sendMessageSucceed.value = false
+            guard let token = KeychainManager.shared.read(key: TokenKey.accessToken) else { return }
 
             Task {
-                do {
-                    let newChat = try await OpenTalkService.sendMessage(of: openTalkId, text: text)
-
-                    await MainActor.run {
-                        chats.value.append(newChat)
-                        message.value.removeAll()
-                        sendMessageSucceed.value = true
-                    }
-                } catch let error as NetworkError {
-                    print(error.localizedDescription)
-                }
+                await chatService.sendMessage(token: token, openTalkId: openTalkId, content: text)
             }
+//            chatService.sendMessage(token: token, openTalkId: openTalkId, content: text)
+//            sendMessageSucceed.value = false
+//
+//            Task {
+//                do {
+//                    let newChat = try await OpenTalkService.sendMessage(of: openTalkId, text: text)
+//
+//                    await MainActor.run {
+//                        chats.value.append(newChat)
+//                        message.value.removeAll()
+//                        sendMessageSucceed.value = true
+//                    }
+//                } catch let error as NetworkError {
+//                    print(error.localizedDescription)
+//                }
+//            }
         }
     }
 

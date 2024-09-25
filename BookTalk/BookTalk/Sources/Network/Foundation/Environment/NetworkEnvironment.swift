@@ -16,4 +16,12 @@ struct NetworkEnvironment {
         
         return baseURL.replacingOccurrences(of: " ", with: "")
     }
+
+    static var webSocketURL: String {
+        guard let webSocketURL = Bundle.main.infoDictionary?["WEBSOCKET_URL"] as? String else {
+            fatalError("WEBSOCKET_URL is missing in the Info.plist")
+        }
+
+        return webSocketURL.replacingOccurrences(of: " ", with: "")
+    }
 }

@@ -185,22 +185,25 @@ final class ChatViewController: BaseViewController {
     }
 
     private func bind() {
-        viewModel.chats.subscribe { [weak self] chats in
-            guard let self = self else { return }
+        viewModel.chats.subscribe {chats in
 
-            let prevContentHeight = chatTableView.contentSize.height
-            chatTableView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
 
-            if viewModel.isInitialLoad && chats.count > 0 {
-                chatTableView.scrollToRow(
-                    at: IndexPath(row: chats.count - 1, section: 0),
-                    at: .bottom,
-                    animated: false
-                )
-            } else {
-                let newContentHeight = chatTableView.contentSize.height
-                let offset = newContentHeight - prevContentHeight
-                chatTableView.setContentOffset(CGPoint(x: 0, y: offset), animated: false)
+                let prevContentHeight = chatTableView.contentSize.height
+                chatTableView.reloadData()
+
+                if viewModel.isInitialLoad && chats.count > 0 {
+                    chatTableView.scrollToRow(
+                        at: IndexPath(row: chats.count - 1, section: 0),
+                        at: .bottom,
+                        animated: false
+                    )
+                } else {
+                    let newContentHeight = chatTableView.contentSize.height
+                    let offset = newContentHeight - prevContentHeight
+                    chatTableView.setContentOffset(CGPoint(x: 0, y: offset), animated: false)
+                }
             }
         }
 
