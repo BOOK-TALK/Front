@@ -15,4 +15,5 @@ target 'BookTalk' do
 	pod 'KakaoSDKCommon'
 	pod 'KakaoSDKAuth'
 	pod 'KakaoSDKUser'
+	pod 'StompClientLib'
 end
