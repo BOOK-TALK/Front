@@ -5,6 +5,7 @@
 //  Created by 김민 on 9/23/24.
 //
 
+import Combine
 import Foundation
 import StompClientLib
 
@@ -15,8 +16,8 @@ protocol ChatServiceType {
     func connect()
     func subscribe(to openTalkId: Int)
     func unsubscribe(from openTalkId: Int)
-    func sendMessage(token: String, openTalkId: Int, content: String) async
-    func receivedMessage(message: String) async -> ChatModel
+    func sendMessage(from chat: SendChatModel) async
+    func receivedMessage(chatResponse: ChatResponseDTO)
     func disconnect()
 }
 
@@ -24,6 +25,8 @@ final class ChatService: ChatServiceType {
 
     private let url = URL(string: NetworkEnvironment.webSocketURL + "/websocket")!
     private var socketClient = StompClientLib()
+
+    var receivedMessage = PassthroughSubject<ChatModel, Never>()
 
     /// openTalkId 값이 추가 되면 subscribe 수행
     var openTalkId: Int? {
@@ -46,7 +49,7 @@ final class ChatService: ChatServiceType {
         socketClient.openSocketWithURLRequest(
             request: NSURLRequest(url: url),
             delegate: self,
-            connectionHeaders: ["heart-beat": "10000,0"]
+            connectionHeaders: ["heart-beat": "10000,10000"]
         )
     }
 
@@ -76,12 +79,9 @@ final class ChatService: ChatServiceType {
         log("subscribing to opentalkId: \(openTalkId)")
     }
 
-    func sendMessage(token: String, openTalkId: Int, content: String) async {
-        let dicObject: [String: Any] = [
-            "jwtToken": token,
-            "opentalkId": openTalkId,
-            "content": content
-        ]
+    func sendMessage(from chat: SendChatModel) async {
+        let dicObject = chat.toSendChatDTO().toDictionary()
+
 
         await withCheckedContinuation { continuation in
             socketClient.sendJSONForDict(dict: dicObject as AnyObject, toDestination: "/pub/message")
@@ -89,8 +89,10 @@ final class ChatService: ChatServiceType {
         }
     }
 
-    func receivedMessage(message: String) async -> ChatModel {
-        return ChatModel(nickname: "", message: "", isMine: false)
+    func receivedMessage(chatResponse: ChatResponseDTO) {
+        log("\(chatResponse)")
+
+        NotificationCenter.default.post(name: .newChatReceived, object: chatResponse.toModel())
     }
 
     func disconnect() {
@@ -109,17 +111,19 @@ extension ChatService: StompClientLibDelegate {
         akaStringBody stringBody: String?,
         withHeader header: [String : String]?,
         withDestination destination: String) {
-            guard let JSON = jsonBody as? [String : AnyObject] else { return }
-            print(JSON.values)
+            guard let json = jsonBody as? [String: AnyObject] else { return }
 
-            print("Destination : \(destination)")
-            print("JSON Body : \(String(describing: jsonBody))")
-            print("String Body : \(stringBody ?? "nil")")
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: json, options: [])
+                let decoder = JSONDecoder()
 
-            Task {
-                await receivedMessage(message: "")
+                let receivedChatDTO = try decoder.decode(ChatResponseDTO.self, from: jsonData)
+                receivedMessage(chatResponse: receivedChatDTO)
+
+            } catch {
+                print("Failed parsing: \(error)")
             }
-        }
+    }
 
     func stompClientDidDisconnect(client: StompClientLib!) {
         log("socket is disconnected")
