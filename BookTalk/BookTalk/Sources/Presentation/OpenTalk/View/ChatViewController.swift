@@ -47,7 +47,7 @@ final class ChatViewController: BaseViewController {
         addTarget()
         bind()
 
-        viewModel.send(action: .joinToOpenTalk(isbn: viewModel.isbn))
+        viewModel.send(action: .joinToOpenTalk(isbn: viewModel.bookInfo?.isbn ?? ""))
     }
 
     // MARK: - UI Setup
@@ -266,7 +266,7 @@ final class ChatViewController: BaseViewController {
     }
 
     @objc private func menuButtonDidTapped() {
-        let viewModel = ChatMenuViewModel(isbn: viewModel.isbn)
+        let viewModel = ChatMenuViewModel(isbn: viewModel.bookInfo?.isbn ?? "")
         let chatMenuVC = ChatMenuViewController(viewModel: viewModel)
         navigationController?.pushViewController(chatMenuVC, animated: true)
     }

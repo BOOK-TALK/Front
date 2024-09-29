@@ -22,16 +22,19 @@ final class ChatViewModel {
     private var hasMoreResults = true
     private var cancellables = Set<AnyCancellable>()
 
-    let isbn: String
-
+    let bookInfo: BasicBookInfo?
+    
     var openTalkId: Int?
 
     private var chatService: ChatServiceType
 
     // MARK: - Initializer
 
-    init(isbn: String, chatService: ChatServiceType = ChatService()) {
-        self.isbn = isbn
+    init(
+        bookInfo: BasicBookInfo?,
+        chatService: ChatServiceType = ChatService()
+    ) {
+        self.bookInfo = bookInfo
         self.chatService = chatService
 
         setMessageReceiving()
@@ -53,7 +56,9 @@ final class ChatViewModel {
                 do {
                     let openTalkInfo = try await OpenTalkService.postOpenTalkJoin(
                         of: isbn,
-                        pageSize: pageSize
+                        pageSize: pageSize,
+                        bookName: bookInfo?.title ?? "",
+                        bookImageUrl: bookInfo?.coverImageURL ?? ""
                     )
 
                     chatService.openTalkId = openTalkInfo.openTalkId

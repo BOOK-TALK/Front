@@ -27,9 +27,16 @@ struct OpenTalkService {
 
     static func postOpenTalkJoin(
         of isbn: String,
-        pageSize: Int
+        pageSize: Int,
+        bookName: String,
+        bookImageUrl: String
     ) async throws -> OpenTalkModel {
-        let params: OpenTalkJoinRequestDTO = .init(isbn: isbn, pageSize: pageSize)
+        let params: OpenTalkJoinRequestDTO = .init(
+            isbn: isbn,
+            bookname: bookName,
+            bookImageUrl: bookImageUrl,
+            pageSize: pageSize
+        )
 
         let result: OpenTalkJoinResponseDTO = try await NetworkService.shared.request(
             target: OpenTalkTarget.postOpenTalkJoin(params: params)
