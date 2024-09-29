@@ -203,6 +203,7 @@
 		ABD10DF82C52514F005F290E /* FirstCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD10DF72C52514F005F290E /* FirstCategoryCell.swift */; };
 		ABD3CAA02CA072C500438747 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3CA9F2CA072C500438747 /* ChatService.swift */; };
 		ABD3CAC32CA4618A00438747 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3CAC22CA4618A00438747 /* Log.swift */; };
+		ABD3CAC62CA46BC700438747 /* SendChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3CAC52CA46BC700438747 /* SendChatModel.swift */; };
 		ABDADA3E2C70A6A3009ED3BB /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDADA3D2C70A6A3009ED3BB /* Date+.swift */; };
 		ABED44102C665CDB0073398A /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABED440F2C665CDB0073398A /* GoalViewModel.swift */; };
 		ABED44132C665DD90073398A /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABED44122C665DD90073398A /* GoalModel.swift */; };
@@ -422,6 +423,7 @@
 		ABD3CA9D2CA06E7500438747 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Secrets.xcconfig; path = BookTalk/Secrets.xcconfig; sourceTree = "<group>"; };
 		ABD3CA9F2CA072C500438747 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		ABD3CAC22CA4618A00438747 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		ABD3CAC52CA46BC700438747 /* SendChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatModel.swift; sourceTree = "<group>"; };
 		ABDADA3D2C70A6A3009ED3BB /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		ABED440F2C665CDB0073398A /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		ABED44122C665DD90073398A /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
@@ -859,6 +861,7 @@
 				AB0C0F692C5BFDBE007812C5 /* ChatModel.swift */,
 				ABB901C62C73983700727875 /* OpenTalkBookModel.swift */,
 				AB5712F62C7B2872007058FC /* OpenTalkModel.swift */,
+				ABD3CAC52CA46BC700438747 /* SendChatModel.swift */,
 			);
 			path = OpenTalk;
 			sourceTree = "<group>";
@@ -1937,6 +1940,7 @@
 				AB2E7C042C565B3A00CE43CB /* FirstCategoryViewController.swift in Sources */,
 				AB2E7BDC2C53B64800CE43CB /* CategorySectionKind.swift in Sources */,
 				AB0C0F7E2C5F6D83007812C5 /* CompletedReadingCell.swift in Sources */,
+				ABD3CAC62CA46BC700438747 /* SendChatModel.swift in Sources */,
 				054FA17D2C7465260007D9C9 /* SocialLoginButton.swift in Sources */,
 				ABED44202C667F6F0073398A /* DetailGoalViewModel.swift in Sources */,
 				ABD10DF82C52514F005F290E /* FirstCategoryCell.swift in Sources */,

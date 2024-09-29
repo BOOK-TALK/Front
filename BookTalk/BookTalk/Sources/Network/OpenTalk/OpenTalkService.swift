@@ -71,18 +71,4 @@ struct OpenTalkService {
 
         return result.map { $0.toModel() }
     }
-
-    static func sendMessage(of id: Int, text: String) async throws -> ChatModel {
-        let params: ChatSendRequestDTO = .init(
-            opentalkId: id,
-            type: ChatType.text.rawValue,
-            content: text
-        )
-
-        let result: ChatResponseDTO = try await NetworkService.shared.request(
-            target: OpenTalkTarget.postChatMessage(params: params)
-        )
-
-        return result.toModel()
-    }
 }

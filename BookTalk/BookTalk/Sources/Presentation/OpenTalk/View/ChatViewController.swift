@@ -216,17 +216,6 @@ final class ChatViewController: BaseViewController {
             self?.sendButton.isEnabled = !text.isEmpty
             self?.messageTextField.text = text
         }
-
-        viewModel.sendMessageSucceed.subscribe { [weak self] isSucceed in
-            guard isSucceed else { return }
-            guard let self = self else { return }
-
-            chatTableView.scrollToRow(
-                at: IndexPath(row: max(viewModel.chats.value.count - 1, 0), section: 0),
-                at: .bottom,
-                animated: false
-            )
-        }
     }
 
     // MARK: - Actions

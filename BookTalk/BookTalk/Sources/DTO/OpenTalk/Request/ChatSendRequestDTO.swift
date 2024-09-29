@@ -10,5 +10,6 @@ import Foundation
 struct ChatSendRequestDTO: Encodable {
     let opentalkId: Int
     let type: String
+    let jwtToken: String
     let content: String
 }
