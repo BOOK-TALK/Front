@@ -301,7 +301,15 @@ extension OpenTalkViewController: UICollectionViewDelegateFlowLayout {
                 book = viewModel.favoriteOpenTalks.value[indexPath.item]
             }
 
-            let viewModel = ChatViewModel(isbn: book.isbn)
+            let bookInfo: BasicBookInfo = .init(
+                isbn: book.isbn,
+                coverImageURL: book.bookImageURL,
+                title: book.bookName,
+                description: "",
+                author: ""
+            )
+
+            let viewModel = ChatViewModel(bookInfo: bookInfo)
             let chattingVC = ChatViewController(viewModel: viewModel)
             chattingVC.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(chattingVC, animated: true)
