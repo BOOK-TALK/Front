@@ -717,6 +717,7 @@
 				054543AA2C5786B000E64948 /* Search */,
 				ABD10DE62C516D26005F290E /* Category */,
 				AB0C0F552C5BD557007812C5 /* OpenTalk */,
+				ABC172032CAD432F00370901 /* Chat */,
 				ABED44072C6650910073398A /* Goal */,
 				AB4CBA722C6DFF6B009A2AB6 /* MyPage */,
 				AB5D356A2C7798E40028995C /* AddBook */,
@@ -809,7 +810,6 @@
 			isa = PBXGroup;
 			children = (
 				0579253E2C4FF4D700834EC6 /* OpenTalkViewController.swift */,
-				AB0C0F602C5BE9B1007812C5 /* ChatViewController.swift */,
 				AB0C0F772C5F639C007812C5 /* ChatMenuViewController.swift */,
 			);
 			path = View;
@@ -844,8 +844,6 @@
 		AB0C0F632C5BF0FC007812C5 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				AB0C0F642C5BF3E3007812C5 /* OtherChatBubbleCell.swift */,
-				AB0C0F662C5BFC53007812C5 /* MyChatBubbleCell.swift */,
 				AB0C0F792C5F6D19007812C5 /* NowReadingCell.swift */,
 				AB0C0F7B2C5F6D45007812C5 /* MyReadingProgressCell.swift */,
 				AB0C0F7D2C5F6D83007812C5 /* CompletedReadingCell.swift */,
@@ -869,7 +867,6 @@
 		AB0C0F6B2C5BFE51007812C5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				AB0C0F6C2C5BFE5C007812C5 /* ChatViewModel.swift */,
 				AB4CBA4C2C6B2E4B009A2AB6 /* ChatMenuViewModel.swift */,
 				ABB901CD2C739FFD00727875 /* OpenTalkViewModel.swift */,
 			);
@@ -1492,6 +1489,41 @@
 				ABB993662C7F81E800E6DB67 /* GoalService.swift */,
 			);
 			path = Goal;
+			sourceTree = "<group>";
+		};
+		ABC172032CAD432F00370901 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				ABC172042CAD433900370901 /* Cell */,
+				ABC172052CAD433F00370901 /* View */,
+				ABC172062CAD434700370901 /* ViewModel */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		ABC172042CAD433900370901 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AB0C0F642C5BF3E3007812C5 /* OtherChatBubbleCell.swift */,
+				AB0C0F662C5BFC53007812C5 /* MyChatBubbleCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		ABC172052CAD433F00370901 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB0C0F602C5BE9B1007812C5 /* ChatViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABC172062CAD434700370901 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AB0C0F6C2C5BFE5C007812C5 /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		ABC820302C7B26CC001AB371 /* Request */ = {
