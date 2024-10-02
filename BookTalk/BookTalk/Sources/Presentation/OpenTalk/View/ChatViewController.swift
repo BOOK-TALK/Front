@@ -53,7 +53,14 @@ final class ChatViewController: BaseViewController {
     // MARK: - UI Setup
 
     override func setNavigationBar() {
-        navigationItem.backButtonTitle = ""
+        navigationItem.hidesBackButton = true
+
+        let backButton = UIBarButtonItem(
+            image: UIImage(systemName: "chevron.left"),
+            style: .plain,
+            target: self,
+            action: #selector(backButtonDidTapped)
+        )
 
         let chatMenuButton = UIBarButtonItem(
             image: UIImage(systemName: "line.3.horizontal"),
@@ -69,6 +76,7 @@ final class ChatViewController: BaseViewController {
             action: #selector(bookmarkButtonDidTapped)
         )
 
+        navigationItem.leftBarButtonItem = backButton
         navigationItem.rightBarButtonItems = [chatMenuButton, bookmarkBarButton]
     }
 
@@ -185,7 +193,7 @@ final class ChatViewController: BaseViewController {
     }
 
     private func bind() {
-        viewModel.chats.subscribe {chats in
+        viewModel.chats.subscribe { [weak self] chats in
 
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
@@ -279,6 +287,12 @@ final class ChatViewController: BaseViewController {
 
     @objc private func textFieldDidChanged(_ textField: UITextField) {
         viewModel.send(action: .textFieldChanged(text: textField.text ?? ""))
+    }
+
+    @objc private func backButtonDidTapped() {
+        viewModel.send(action: .backButtonDidTapped)
+
+        navigationController?.popViewController(animated: true)
     }
 }
 

@@ -46,6 +46,7 @@ final class ChatViewModel {
         case toggleBookmark(isFavorite: Bool)
         case textFieldChanged(text: String)
         case sendMessage(openTalkId: Int?, message: String)
+        case backButtonDidTapped
     }
 
     func send(action: Action) {
@@ -110,6 +111,9 @@ final class ChatViewModel {
                     message.value.removeAll()
                 }
             }
+
+        case .backButtonDidTapped:
+            chatService.disconnect()
         }
     }
 

@@ -40,9 +40,8 @@ final class ChatService: ChatServiceType {
         connect()
     }
 
-    /// deinit 시 연결 해제
     deinit {
-        disconnect()
+        NotificationCenter.default.removeObserver(self)
     }
 
     func registerSocket() {
@@ -82,9 +81,11 @@ final class ChatService: ChatServiceType {
     func sendMessage(from chat: SendChatModel) async {
         let dicObject = chat.toSendChatDTO().toDictionary()
 
-
         await withCheckedContinuation { continuation in
-            socketClient.sendJSONForDict(dict: dicObject as AnyObject, toDestination: "/pub/message")
+            socketClient.sendJSONForDict(
+                dict: dicObject as AnyObject,
+                toDestination: "/pub/message"
+            )
             continuation.resume()
         }
     }
