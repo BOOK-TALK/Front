@@ -34,7 +34,7 @@ struct OpenTalkService {
         let params: OpenTalkJoinRequestDTO = .init(
             isbn: isbn,
             bookname: bookName,
-            bookImageUrl: bookImageUrl,
+            bookImageUrl: bookImageUrl.isEmpty ? nil : bookImageUrl,
             pageSize: pageSize
         )
 

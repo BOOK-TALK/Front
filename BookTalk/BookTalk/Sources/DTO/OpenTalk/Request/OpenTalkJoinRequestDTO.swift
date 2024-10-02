@@ -10,6 +10,6 @@ import Foundation
 struct OpenTalkJoinRequestDTO: Encodable {
     let isbn: String
     let bookname: String
-    let bookImageUrl: String
+    let bookImageUrl: String?
     let pageSize: Int
 }
