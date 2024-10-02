@@ -251,6 +251,7 @@ extension MyViewController: UICollectionViewDelegate {
     private func pushToDetailViewController(of isbn: String) {
         let viewModel = BookDetailViewModel(isbn: isbn)
         let detailVC = BookDetailViewController(viewModel: viewModel)
+        detailVC.hidesBottomBarWhenPushed = true
 
         navigationController?.pushViewController(detailVC, animated: true)
     }

@@ -45,6 +45,7 @@ final class AllBooksViewController: BaseViewController {
 
     override func setNavigationBar() {
         navigationItem.title = "전체 보기"
+        navigationItem.backButtonTitle = ""
     }
 
     override func setViews() {

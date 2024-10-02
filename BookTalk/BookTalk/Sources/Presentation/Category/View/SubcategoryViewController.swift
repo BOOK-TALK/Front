@@ -45,6 +45,7 @@ final class SubcategoryViewController: BaseViewController {
 
     override func setNavigationBar() {
         navigationItem.title = viewModel.firstCategoryType.title
+        navigationItem.backButtonTitle = ""
         navigationItem.largeTitleDisplayMode = .never
     }
 
@@ -252,6 +253,7 @@ extension SubcategoryViewController: BookWithHeaderCellDelegate {
     func bookImageTapped(of isbn: String) {
         let viewModel = BookDetailViewModel(isbn: isbn)
         let detailVC = BookDetailViewController(viewModel: viewModel)
+        detailVC.hidesBottomBarWhenPushed = true
 
         navigationController?.pushViewController(detailVC, animated: true)
     }

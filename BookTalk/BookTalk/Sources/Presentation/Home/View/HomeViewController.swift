@@ -95,6 +95,7 @@ final class HomeViewController: BaseViewController {
             action: #selector(searchIconTapped)
         )
 
+        navigationItem.backButtonTitle = ""
         navigationItem.rightBarButtonItem = searchIcon
     }
 
