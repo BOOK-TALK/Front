@@ -81,6 +81,7 @@ final class ChatService: ChatServiceType {
     func sendMessage(from chat: SendChatModel) async {
         let dicObject = chat.toSendChatDTO().toDictionary()
 
+
         await withCheckedContinuation { continuation in
             socketClient.sendJSONForDict(
                 dict: dicObject as AnyObject,
