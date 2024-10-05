@@ -1,0 +1,66 @@
+PODS:
+  - Alamofire (5.9.1)
+  - DGCharts (5.1.0):
+    - DGCharts/Core (= 5.1.0)
+  - DGCharts/Core (5.1.0)
+  - KakaoSDKAuth (2.22.7):
+    - KakaoSDKCommon (= 2.22.7)
+  - KakaoSDKCommon (2.22.7):
+    - KakaoSDKCommon/Common (= 2.22.7)
+    - KakaoSDKCommon/Network (= 2.22.7)
+  - KakaoSDKCommon/Common (2.22.7)
+  - KakaoSDKCommon/Network (2.22.7):
+    - Alamofire (~> 5.9.0)
+    - KakaoSDKCommon/Common (= 2.22.7)
+  - KakaoSDKUser (2.22.7):
+    - KakaoSDKAuth (= 2.22.7)
+  - Kingfisher (8.0.3)
+  - lottie-ios (4.5.0)
+  - SnapKit (5.7.1)
+  - SocketRocket (0.7.1)
+  - StompClientLib (1.4.1):
+    - SocketRocket
+  - Then (3.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - DGCharts
+  - KakaoSDKAuth
+  - KakaoSDKCommon
+  - KakaoSDKUser
+  - Kingfisher (~> 8.0)
+  - lottie-ios
+  - SnapKit (~> 5.7.0)
+  - StompClientLib
+  - Then
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - DGCharts
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKUser
+    - Kingfisher
+    - lottie-ios
+    - SnapKit
+    - SocketRocket
+    - StompClientLib
+    - Then
+
+SPEC CHECKSUMS:
+  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  DGCharts: 1c6daf585b6cfc78807af44ea690d357c410627f
+  KakaoSDKAuth: 45204252ff7c379c0f86c5573f97ec36885afca0
+  KakaoSDKCommon: 132164a6bac8bcd3a4346d3bf777f34f8f39fdca
+  KakaoSDKUser: 4c9cf1da78710d19d0b2c2dd32d1a44c544cdfa4
+  Kingfisher: bbf78af014cc845cf9a799363f627b5212784165
+  lottie-ios: a881093fab623c467d3bce374367755c272bdd59
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
+  StompClientLib: ac40390e9660c574675f1c933bec81c8e2811a4f
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+
+PODFILE CHECKSUM: b13a563094ed92cd380ae795d7cd35ae2e05b89b
+
+COCOAPODS: 1.15.2

@@ -9,5 +9,7 @@ import Foundation
 
 struct OpenTalkJoinRequestDTO: Encodable {
     let isbn: String
+    let bookname: String
+    let bookImageURL: String?
     let pageSize: Int
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class ChatViewModel {
 
@@ -14,19 +15,29 @@ final class ChatViewModel {
     private(set) var message = Observable("")
     private(set) var sendMessageSucceed = Observable(false)
     private(set) var isInitialLoad = true
+    private(set) var newChat: ChatModel?
 
     private var pageSize = 10
     private var currentPage = 0
     private var hasMoreResults = true
+    private var cancellables = Set<AnyCancellable>()
 
-    let isbn: String
-
+    let bookInfo: BasicBookInfo?
+    
     var openTalkId: Int?
+
+    private var chatService: ChatServiceType
 
     // MARK: - Initializer
 
-    init(isbn: String) {
-        self.isbn = isbn
+    init(
+        bookInfo: BasicBookInfo?,
+        chatService: ChatServiceType = ChatService()
+    ) {
+        self.bookInfo = bookInfo
+        self.chatService = chatService
+
+        setMessageReceiving()
     }
 
     enum Action {
@@ -35,6 +46,7 @@ final class ChatViewModel {
         case toggleBookmark(isFavorite: Bool)
         case textFieldChanged(text: String)
         case sendMessage(openTalkId: Int?, message: String)
+        case backButtonDidTapped
     }
 
     func send(action: Action) {
@@ -45,8 +57,12 @@ final class ChatViewModel {
                 do {
                     let openTalkInfo = try await OpenTalkService.postOpenTalkJoin(
                         of: isbn,
-                        pageSize: pageSize
+                        pageSize: pageSize,
+                        bookName: bookInfo?.title ?? "",
+                        bookImageUrl: bookInfo?.coverImageURL ?? ""
                     )
+
+                    chatService.openTalkId = openTalkInfo.openTalkId
 
                     await MainActor.run {
                         chats.value = openTalkInfo.chats.reversed()
@@ -85,22 +101,29 @@ final class ChatViewModel {
 
         case let .sendMessage(openTalkId, text):
             guard let openTalkId = openTalkId else { return }
-            sendMessageSucceed.value = false
+
+            let chat: SendChatModel = .init(type: .text, openTalkId: openTalkId, content: text)
 
             Task {
-                do {
-                    let newChat = try await OpenTalkService.sendMessage(of: openTalkId, text: text)
+                _ = await chatService.sendMessage(from: chat)
 
-                    await MainActor.run {
-                        chats.value.append(newChat)
-                        message.value.removeAll()
-                        sendMessageSucceed.value = true
-                    }
-                } catch let error as NetworkError {
-                    print(error.localizedDescription)
+                await MainActor.run {
+                    message.value.removeAll()
                 }
             }
+
+        case .backButtonDidTapped:
+            chatService.disconnect()
         }
+    }
+
+    private func setMessageReceiving() {
+        NotificationCenter.default.publisher(for: .newChatReceived)
+            .compactMap { $0.object as? ChatModel }
+            .sink { [weak self] newChat in
+                self?.chats.value.append(newChat)
+            }
+            .store(in: &cancellables)
     }
 
     private func fetchChats(id: Int, currentPage: Int, pageSize: Int) {

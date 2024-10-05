@@ -14,4 +14,5 @@ extension Notification.Name {
     static let progressChanged = Notification.Name(rawValue: "progressChanged")
     static let detailChanged = Notification.Name(rawValue: "detailChanged")
     static let openTalkChanged = Notification.Name(rawValue: "openTalkChanged")
+    static let newChatReceived = Notification.Name(rawValue: "newChatReceived")
 }

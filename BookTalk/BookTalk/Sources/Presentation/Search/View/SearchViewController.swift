@@ -101,7 +101,9 @@ final class SearchViewController: BaseViewController {
         searchBar.autocorrectionType = .no
         searchBar.spellCheckingType = .no
         searchBar.sizeToFit()
+        
         navigationItem.titleView = searchBar
+        navigationItem.backButtonTitle = ""
     }
 
     override func setViews() {

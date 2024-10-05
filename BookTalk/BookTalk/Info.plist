@@ -2,18 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
+	<key>NSCameraUsageDescription</key>
+	<string>프로필 사진 설정을 위해 카메라 접근 권한이 필요합니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>프로필 사진 설정을 위해 앨범 접근 권한이 필요합니다.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>사용자의 현재 위치를 기반으로 날씨 정보를 제공하기 위해 위치 접근이 필요합니다.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>백그라운드에서도 위치 정보를 활용하여 지속적인 서비스를 제공하기 위해 위치 접근이 필요합니다.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>사용자의 현재 위치를 기반으로 날씨 정보를 제공하기 위해 위치 접근이 필요합니다.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>프로필 사진 설정을 위해 앨범 접근 권한이 필요합니다.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>프로필 사진 설정을 위해 카메라 접근 권한이 필요합니다.</string>
-	<key>KakaoNativeAppKey</key>
-	<string>$(KAKAO_NATIVE_APP_KEY)</string>
 	<key>BASE_URL</key>
 	<string>$(BASE_URL)</string>
 	<key>CFBundleURLTypes</key>
@@ -27,6 +25,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>KakaoNativeAppKey</key>
+	<string>$(KAKAO_NATIVE_APP_KEY)</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -49,5 +49,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>WEBSOCKET_URL</key>
+	<string>$(WEBSOCKET_URL)</string>
 </dict>
 </plist>

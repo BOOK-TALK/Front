@@ -366,7 +366,7 @@ extension BookDetailViewController: BookInfoCellDelegate {
 
     func openTalkButtonDidTapped() {
         let viewModel = ChatViewModel(
-            isbn: viewModel.output.detailBook.value?.basicBookInfo.isbn ?? ""
+            bookInfo: viewModel.output.detailBook.value?.basicBookInfo
         )
         let chatVC = ChatViewController(viewModel: viewModel)
         chatVC.hidesBottomBarWhenPushed = true

@@ -27,9 +27,16 @@ struct OpenTalkService {
 
     static func postOpenTalkJoin(
         of isbn: String,
-        pageSize: Int
+        pageSize: Int,
+        bookName: String,
+        bookImageUrl: String
     ) async throws -> OpenTalkModel {
-        let params: OpenTalkJoinRequestDTO = .init(isbn: isbn, pageSize: pageSize)
+        let params: OpenTalkJoinRequestDTO = .init(
+            isbn: isbn,
+            bookname: bookName,
+            bookImageURL: bookImageUrl.isEmpty ? nil : bookImageUrl,
+            pageSize: pageSize
+        )
 
         let result: OpenTalkJoinResponseDTO = try await NetworkService.shared.request(
             target: OpenTalkTarget.postOpenTalkJoin(params: params)
@@ -70,19 +77,5 @@ struct OpenTalkService {
         )
 
         return result.map { $0.toModel() }
-    }
-
-    static func sendMessage(of id: Int, text: String) async throws -> ChatModel {
-        let params: ChatSendRequestDTO = .init(
-            opentalkId: id,
-            type: ChatType.text.rawValue,
-            content: text
-        )
-
-        let result: ChatResponseDTO = try await NetworkService.shared.request(
-            target: OpenTalkTarget.postChatMessage(params: params)
-        )
-
-        return result.toModel()
     }
 }

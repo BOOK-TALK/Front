@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "size=lg, width=wide, align=center.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "kakaoLoginButton.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

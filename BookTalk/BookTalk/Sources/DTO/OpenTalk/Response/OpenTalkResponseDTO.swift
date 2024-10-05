@@ -21,7 +21,7 @@ struct OpenTalkResponseDTO: Decodable {
     let id: Int
     let isbn13: String
     let bookName: String
-    let bookImageURL: String
+    let bookImageURL: String?
 }
 
 extension OpenTalkResponseDTO {
@@ -31,7 +31,7 @@ extension OpenTalkResponseDTO {
             id: id,
             isbn: isbn13,
             bookName: bookName,
-            bookImageURL: bookImageURL
+            bookImageURL: bookImageURL ?? ""
         )
     }
 }

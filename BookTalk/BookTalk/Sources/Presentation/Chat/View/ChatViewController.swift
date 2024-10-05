@@ -47,13 +47,20 @@ final class ChatViewController: BaseViewController {
         addTarget()
         bind()
 
-        viewModel.send(action: .joinToOpenTalk(isbn: viewModel.isbn))
+        viewModel.send(action: .joinToOpenTalk(isbn: viewModel.bookInfo?.isbn ?? ""))
     }
 
     // MARK: - UI Setup
 
     override func setNavigationBar() {
-        navigationItem.backButtonTitle = ""
+        navigationItem.hidesBackButton = true
+
+        let backButton = UIBarButtonItem(
+            image: UIImage(systemName: "chevron.left"),
+            style: .plain,
+            target: self,
+            action: #selector(backButtonDidTapped)
+        )
 
         let chatMenuButton = UIBarButtonItem(
             image: UIImage(systemName: "line.3.horizontal"),
@@ -69,6 +76,7 @@ final class ChatViewController: BaseViewController {
             action: #selector(bookmarkButtonDidTapped)
         )
 
+        navigationItem.leftBarButtonItem = backButton
         navigationItem.rightBarButtonItems = [chatMenuButton, bookmarkBarButton]
     }
 
@@ -186,21 +194,24 @@ final class ChatViewController: BaseViewController {
 
     private func bind() {
         viewModel.chats.subscribe { [weak self] chats in
-            guard let self = self else { return }
 
-            let prevContentHeight = chatTableView.contentSize.height
-            chatTableView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
 
-            if viewModel.isInitialLoad && chats.count > 0 {
-                chatTableView.scrollToRow(
-                    at: IndexPath(row: chats.count - 1, section: 0),
-                    at: .bottom,
-                    animated: false
-                )
-            } else {
-                let newContentHeight = chatTableView.contentSize.height
-                let offset = newContentHeight - prevContentHeight
-                chatTableView.setContentOffset(CGPoint(x: 0, y: offset), animated: false)
+                let prevContentHeight = chatTableView.contentSize.height
+                chatTableView.reloadData()
+
+                if viewModel.isInitialLoad && chats.count > 0 {
+                    chatTableView.scrollToRow(
+                        at: IndexPath(row: chats.count - 1, section: 0),
+                        at: .bottom,
+                        animated: false
+                    )
+                } else {
+                    let newContentHeight = chatTableView.contentSize.height
+                    let offset = newContentHeight - prevContentHeight
+                    chatTableView.setContentOffset(CGPoint(x: 0, y: offset), animated: false)
+                }
             }
         }
 
@@ -212,17 +223,6 @@ final class ChatViewController: BaseViewController {
         viewModel.message.subscribe { [weak self] text in
             self?.sendButton.isEnabled = !text.isEmpty
             self?.messageTextField.text = text
-        }
-
-        viewModel.sendMessageSucceed.subscribe { [weak self] isSucceed in
-            guard isSucceed else { return }
-            guard let self = self else { return }
-
-            chatTableView.scrollToRow(
-                at: IndexPath(row: max(viewModel.chats.value.count - 1, 0), section: 0),
-                at: .bottom,
-                animated: false
-            )
         }
     }
 
@@ -274,7 +274,7 @@ final class ChatViewController: BaseViewController {
     }
 
     @objc private func menuButtonDidTapped() {
-        let viewModel = ChatMenuViewModel(isbn: viewModel.isbn)
+        let viewModel = ChatMenuViewModel(isbn: viewModel.bookInfo?.isbn ?? "")
         let chatMenuVC = ChatMenuViewController(viewModel: viewModel)
         navigationController?.pushViewController(chatMenuVC, animated: true)
     }
@@ -287,6 +287,12 @@ final class ChatViewController: BaseViewController {
 
     @objc private func textFieldDidChanged(_ textField: UITextField) {
         viewModel.send(action: .textFieldChanged(text: textField.text ?? ""))
+    }
+
+    @objc private func backButtonDidTapped() {
+        viewModel.send(action: .backButtonDidTapped)
+
+        navigationController?.popViewController(animated: true)
     }
 }
 
