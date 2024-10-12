@@ -35,6 +35,8 @@ final class AppleWeatherLegalSourceWebViewController: BaseViewController {
 
     override func setConstraints() {
         webView = WKWebView(frame: view.bounds)
+        webView.scrollView.contentInsetAdjustmentBehavior = .always
+        webView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
         view.addSubview(webView)
     }
 }

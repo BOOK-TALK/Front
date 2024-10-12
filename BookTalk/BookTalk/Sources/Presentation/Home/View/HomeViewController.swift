@@ -367,6 +367,7 @@ extension HomeViewController: SuggestionCellDelegate {
     func didTapAppleWeatherLegalSourceLink() {
         let webVC = AppleWeatherLegalSourceWebViewController()
         let nav = UINavigationController(rootViewController: webVC)
+        nav.setNavigationBarHidden(true, animated: true)
         present(nav, animated: true)
     }
 }
