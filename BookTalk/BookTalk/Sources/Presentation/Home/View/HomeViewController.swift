@@ -183,8 +183,8 @@ extension HomeViewController: UITableViewDataSource {
             ) as? SuggestionCell else {
                 return UITableViewCell()
             }
+            cell.delegate = self
             cell.selectionStyle = .none
-            cell.isUserInteractionEnabled = false
             cell.bind(
                 "\(UserData.shared.getUser()?.nickname ?? "이름 없음")님, 오늘의 추천 도서를 확인해보세요!",
                 weatherCondition: viewModel.weatherConditionOb.value
@@ -357,5 +357,16 @@ extension HomeViewController: BookWithHeaderCellDelegate {
         detailVC.hidesBottomBarWhenPushed = true
 
         navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+
+// MARK: - SuggestionCellDelegate
+
+extension HomeViewController: SuggestionCellDelegate {
+    
+    func didTapAppleWeatherLegalSourceLink() {
+        let webVC = AppleWeatherLegalSourceWebViewController()
+        let nav = UINavigationController(rootViewController: webVC)
+        present(nav, animated: true)
     }
 }
