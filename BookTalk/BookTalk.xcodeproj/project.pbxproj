@@ -57,6 +57,8 @@
 		05C2F11E2C8041A100ACFBAE /* WeatherImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C2F11D2C8041A100ACFBAE /* WeatherImage.swift */; };
 		05CB069C2C7699E100673947 /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB069B2C7699E100673947 /* UserInfoViewModel.swift */; };
 		05CB069E2C769A1700673947 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB069D2C769A1700673947 /* UserInfoViewController.swift */; };
+		05E2A6DB2CB6968000B5D243 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 05E2A6DA2CB6968000B5D243 /* Secrets.xcconfig */; };
+		05E2A79E2CBA209400B5D243 /* AppleWeatherLegalSourceWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2A79D2CBA209400B5D243 /* AppleWeatherLegalSourceWebViewController.swift */; };
 		05F48B802C8C767600DABF81 /* WeahterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F48B7F2C8C767600DABF81 /* WeahterService.swift */; };
 		05F48B822C8D9AC800DABF81 /* UIImage+WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F48B812C8D9AC800DABF81 /* UIImage+WeatherCondition.swift */; };
 		AB0784852C74FA1D0017812F /* OAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0784842C74FA1D0017812F /* OAuthManager.swift */; };
@@ -270,6 +272,8 @@
 		05C2F11D2C8041A100ACFBAE /* WeatherImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherImage.swift; sourceTree = "<group>"; };
 		05CB069B2C7699E100673947 /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		05CB069D2C769A1700673947 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		05E2A6DA2CB6968000B5D243 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		05E2A79D2CBA209400B5D243 /* AppleWeatherLegalSourceWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWeatherLegalSourceWebViewController.swift; sourceTree = "<group>"; };
 		05F48B7F2C8C767600DABF81 /* WeahterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeahterService.swift; sourceTree = "<group>"; };
 		05F48B812C8D9AC800DABF81 /* UIImage+WeatherCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+WeatherCondition.swift"; sourceTree = "<group>"; };
 		5A3C9B035AEF9DDDF1BDFA51 /* Pods_BookTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -420,7 +424,6 @@
 		ABC820332C7B2711001AB371 /* OpenTalkJoinResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTalkJoinResponseDTO.swift; sourceTree = "<group>"; };
 		ABC820352C7B279C001AB371 /* ChatResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponseDTO.swift; sourceTree = "<group>"; };
 		ABD10DF72C52514F005F290E /* FirstCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCategoryCell.swift; sourceTree = "<group>"; };
-		ABD3CA9D2CA06E7500438747 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Secrets.xcconfig; path = BookTalk/Secrets.xcconfig; sourceTree = "<group>"; };
 		ABD3CA9F2CA072C500438747 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		ABD3CAC22CA4618A00438747 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		ABD3CAC52CA46BC700438747 /* SendChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendChatModel.swift; sourceTree = "<group>"; };
@@ -474,6 +477,7 @@
 		054543932C5748E200E64948 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				05E2A79D2CBA209400B5D243 /* AppleWeatherLegalSourceWebViewController.swift */,
 				0579253A2C4FF4CA00834EC6 /* HomeViewController.swift */,
 			);
 			path = View;
@@ -876,7 +880,7 @@
 		AB22AD2F2C4E8D9D00C9A0F3 = {
 			isa = PBXGroup;
 			children = (
-				ABD3CA9D2CA06E7500438747 /* Secrets.xcconfig */,
+				05E2A6DA2CB6968000B5D243 /* Secrets.xcconfig */,
 				AB22AD3A2C4E8D9D00C9A0F3 /* BookTalk */,
 				AB22AD392C4E8D9D00C9A0F3 /* Products */,
 				27C03F4C2BCBED5F01CAB8D3 /* Pods */,
@@ -1764,6 +1768,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E2A6DB2CB6968000B5D243 /* Secrets.xcconfig in Resources */,
 				AB22AD452C4E8D9F00C9A0F3 /* Assets.xcassets in Resources */,
 				AB22AD482C4E8D9F00C9A0F3 /* Base in Resources */,
 				054FA16B2C7463B50007D9C9 /* login.json in Resources */,
@@ -1862,6 +1867,7 @@
 				AB8205572C6E66240014C5A5 /* GenreService.swift in Sources */,
 				AB4F96302C80AE2700DE55E6 /* GoalUserRequestDTO.swift in Sources */,
 				ABD3CAA02CA072C500438747 /* ChatService.swift in Sources */,
+				05E2A79E2CBA209400B5D243 /* AppleWeatherLegalSourceWebViewController.swift in Sources */,
 				054FA18E2C748D8D0007D9C9 /* MyPageStickyTabView.swift in Sources */,
 				ABDADA3E2C70A6A3009ED3BB /* Date+.swift in Sources */,
 				ABAAFDB52C76FDE300FDA084 /* SearchService.swift in Sources */,
@@ -2044,7 +2050,7 @@
 /* Begin XCBuildConfiguration section */
 		AB22AD4A2C4E8D9F00C9A0F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABD3CA9D2CA06E7500438747 /* Secrets.xcconfig */;
+			baseConfigurationReference = 05E2A6DA2CB6968000B5D243 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -2108,7 +2114,7 @@
 		};
 		AB22AD4B2C4E8D9F00C9A0F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABD3CA9D2CA06E7500438747 /* Secrets.xcconfig */;
+			baseConfigurationReference = 05E2A6DA2CB6968000B5D243 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
